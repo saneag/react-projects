@@ -1,0 +1,220 @@
+@import '_variables';
+
+p {
+    color: $caption-color;
+    word-spacing: 1px;
+}
+
+.section_caption {
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+
+@mixin paragraph_style ($color, $size, $weight) {
+    color: $color;
+    font-size: $size;
+    font-weight: $weight;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+
+    img {
+        position: relative;
+        left: 85px;
+        z-index: 99;
+    }
+}
+
+#first_section {
+    min-height: calc(100vh - 80px);
+    margin-top: 0;
+
+    .left_first_section {
+
+        p {
+            &:nth-of-type(2) {
+                font-size: 5rem;
+                font-weight: 900;
+                word-wrap: break-word;
+            }
+
+            &:last-of-type {
+                @include paragraph_style($secondary-color, 20px, 300);
+                letter-spacing: 1px;
+                margin-top: 20px;
+                line-height: 40px;
+            }
+
+            & span {
+                color: $caption-color;
+            }
+        }
+
+        & div:last-of-type {
+            margin-top: 80px;
+        }
+
+        .our_work_btn {
+            @include paragraph_style(black, 20px, 900);
+            background-color: $caption-color;
+            font-family: $Open-Sans;
+            padding: 0.7rem 1.7rem;
+            border-radius: 10px;
+
+            &:hover {
+                background-color: transparent;
+                color: $caption-color;
+                outline: 1px solid $caption-color;
+            }
+        }
+
+        .about_us_btn {
+            @include paragraph_style($caption-color, 20px, normal);
+            background-color: transparent;
+            outline: 1px solid $caption-color;
+            padding: 0.7rem 1.7rem;
+            border-radius: 10px;
+            margin-left: 30px;
+
+            &:hover {
+                background-color: $caption-color;
+                color: black;
+            }
+        }
+    }
+
+    .rigth_first_section {
+        width: 800px;
+        height: 500px;
+    }
+}
+
+#second_section {
+    min-height: 50vh;
+
+    .left_second_section {
+        p {
+            &:not(:first-child) {
+                @include paragraph_style($secondary-color, 20px, 300);
+                margin-top: 40px;
+                word-wrap: break-word;
+                line-height: 2rem;
+
+                & a {
+                    color: $caption-color;
+                    text-decoration: underline;
+                }
+            }
+
+        }
+    }
+}
+
+#third_section {
+    min-height: 80vh;
+    align-items: initial;
+    flex-direction: column;
+
+    .testimonials {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 80px;
+
+        .testimonial_card {
+            width: 270px;
+            height: 280px;
+            padding: 0 40px;
+            word-spacing: 1px;
+            letter-spacing: 1px;
+            display: flex;
+            justify-content: space-evenly;
+            text-align: center;
+            flex-direction: column;
+            background-color: #0A0A06;
+            line-height: 1.2rem;
+
+            p:last-of-type {
+                color: $secondary-color;
+            }
+        }
+    }
+}
+
+#fourth_section {
+    flex-direction: column;
+    align-items: initial;
+
+    form {
+        margin-top: 50px;
+        width: 700px;
+        height: 500px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: #0F0F08;
+        border-radius: 10px;
+        gap: 20px;
+
+        .input_group {
+            width: 90%;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            label {
+                color: $caption-color;
+                font-weight: 900;
+            }
+
+            input {
+                width: 350px;
+                height: 50px;
+                background-color: #030302;
+                color: $caption-color;
+                border-radius: 10px;
+                padding: 10px 10px 10px 20px;
+                font-size: 20px;
+            }
+
+            textarea {
+                background-color: #030302;
+                color: $secondary-color;
+                border-radius: 10px;
+                padding: 10px 10px 10px 20px;
+                font-size: 20px;
+                resize: none;
+                width: 100%;
+                height: 200px;
+                overflow: hidden;
+            }
+        }
+
+        .submit_btn {
+            width: 90%;
+
+            .send_btn {
+                @include paragraph_style(black, 20px, 900);
+                background-color: $caption-color;
+                font-family: $Open-Sans;
+                padding: 0.7rem 1.7rem;
+                border-radius: 10px;
+                align-self: flex-start;
+
+                &:hover {
+                    background-color: transparent;
+                    color: $caption-color;
+                    outline: 1px solid $caption-color;
+
+                }
+            }
+        }
+    }
+
+}

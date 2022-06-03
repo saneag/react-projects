@@ -1,0 +1,31 @@
+nav {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav_logo {
+        color: $caption-color;
+        font-weight: bold;
+        font-size: 22px;
+    }
+
+    .nav_links {
+        width: 400px;
+        display: flex;
+        justify-content: space-around;
+
+        a {
+            color: $secondary-color;
+
+            &:hover {
+                @extend .active_page;
+            }
+        }
+
+        .active_page {
+            border-bottom: 1px solid $caption-color;
+            padding-bottom: 2px;
+        }
+    }
+}
