@@ -11,7 +11,7 @@ import Services from './pages/Services'
 import Contact from './pages/Contact'
 import Error from './pages/Error'
 
-import './styles/css/App.css'
+import './styles/App.scss'
 
 function App() {
   return (

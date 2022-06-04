@@ -16,7 +16,7 @@ const Home = () => {
                         </div>
                         <div>
                             <button className="our_work_btn">Our Work</button>
-                            <button className="about_us_btn">About Us</button>
+                            <Link to="/about" className="about_us_btn">About Us</Link>
                         </div>
                     </div>
                     <div className="rigth_first_section">

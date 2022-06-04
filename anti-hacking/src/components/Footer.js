@@ -12,7 +12,7 @@ function Footer() {
                     <Link to="/about">About</Link>
                     <Link to="/">What we do</Link>
                     <Link to="/">News</Link>
-                    <Link to="/">Contact</Link>
+                    <Link to="/contact">Contact</Link>
                 </div>
                 <div className="second_col footer_col">
                     <p className="footer_caption">Services</p>
