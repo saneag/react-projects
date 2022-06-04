@@ -1,18 +1,19 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
 
+import coinFlip from '../assets/img/logo.png'
+
 function Header() {
+
+    const linksName = ['buy_sell', 'grow', 'markets', 'business', 'support']
+
     return (
         <header>
             <div className="container">
                 <nav>
-                    <Link to="/"><img src="/assets/logo.png" /></Link>
+                    <Link to="/"><img src={coinFlip} /></Link>
                     <div className='nav_links'>
-                        <NavBarLink pageName="buy_Sell" />
-                        <NavBarLink pageName="grow" />
-                        <NavBarLink pageName="markets" />
-                        <NavBarLink pageName="business" />
-                        <NavBarLink pageName="support" />
+                        {linksName.map((linkName) => { return <NavBarLink pageName={linkName} /> })}
                     </div>
                     <div className='sign_in_buttons'>
                         <button className='sign_in'>Sign in</button>
