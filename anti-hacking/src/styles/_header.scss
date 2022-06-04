@@ -17,6 +17,7 @@ nav {
 
         a {
             color: $secondary-color;
+            text-transform: capitalize;
 
             &:hover {
                 @extend .active_page;
