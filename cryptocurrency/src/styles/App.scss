@@ -3,6 +3,7 @@
 @import '_header';
 @import '_home';
 @import '_footer';
+@import '_error';
 
 html {
     scroll-behavior: smooth;
@@ -11,10 +12,6 @@ html {
 #root {
     background-color: #000;
     min-height: 100vh;
-}
-
-main {
-    min-height: calc(100vh - 0px);
 }
 
 .container {

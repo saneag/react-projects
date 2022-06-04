@@ -1,0 +1,44 @@
+#first_section {
+    min-height: calc(100vh - 80px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    & p:first-of-type {
+        font-size: 7rem;
+        font-weight: bold;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+
+    & p:nth-of-type(2) {
+        width: 580px;
+        color: #898CA9;
+        text-align: center;
+        font-size: 1.1rem;
+    }
+
+    .get_started_btn {
+        background-image: linear-gradient(225deg, #18C8FF 14.89%, #933FFE 85.85%);
+        background-size: 150% auto;
+        transition: all 0.3s ease;
+        padding: 20px 30px;
+        border-radius: 10px;
+        color: white;
+        font-weight: 900;
+        margin-top: 50px;
+
+        &:hover {
+            background-position: 100% 0;
+        }
+    }
+}
+
+#second_section {
+    min-height: 600px;
+
+    .cards_container {}
+}

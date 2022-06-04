@@ -1,10 +1,11 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { useLocation } from 'react-router-dom'
 
 import coinFlip from '../assets/img/logo.png'
+import bgImage from '../assets/img/bg-img.png'
 
 function Header() {
-
     const linksName = ['buy_sell', 'grow', 'markets', 'business', 'support']
 
     return (
@@ -12,12 +13,12 @@ function Header() {
             <div className="container">
                 <nav>
                     <Link to="/"><img src={coinFlip} /></Link>
-                    <div className='nav_links'>
-                        {linksName.map((linkName) => { return <NavBarLink pageName={linkName} /> })}
-                    </div>
+                    <ul className='nav_links'>
+                        {linksName.map((linkName, index) => { return <li key={index}><NavBarLink pageName={linkName} /> </li> })}
+                    </ul>
                     <div className='sign_in_buttons'>
-                        <button className='sign_in'>Sign in</button>
-                        <button className='sign_up'>Sign up</button>
+                        <Link to="/sign_in" className='sign_in'>Sign in</Link>
+                        <Link to="/sign_up" className='sign_up'>Sign up</Link>
                     </div>
                 </nav>
             </div>
@@ -25,7 +26,7 @@ function Header() {
     )
 }
 
-function NavBarLink({ pageName }) {
+function NavBarLink({ pageName, i }) {
     return (
         <NavLink to={`/${pageName}`} className={({ isActive }) => (isActive) ? "active_page" : ""}>{pageName.replace(/_/, ' / ')}</NavLink>
     )
