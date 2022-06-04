@@ -8,11 +8,11 @@ function Header() {
                 <nav>
                     <Link to="/"><img src="/assets/logo.png" /></Link>
                     <div className='nav_links'>
-                        <NavBarLink pageName="Buy_Sell" />
-                        <NavBarLink pageName="Grow" />
-                        <NavBarLink pageName="Markets" />
-                        <NavBarLink pageName="Business" />
-                        <NavBarLink pageName="Support" />
+                        <NavBarLink pageName="buy_Sell" />
+                        <NavBarLink pageName="grow" />
+                        <NavBarLink pageName="markets" />
+                        <NavBarLink pageName="business" />
+                        <NavBarLink pageName="support" />
                     </div>
                     <div className='sign_in_buttons'>
                         <button className='sign_in'>Sign in</button>

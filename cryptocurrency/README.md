@@ -1,4 +1,4 @@
-# AntiHacking page
+# Cryptocurrency
 
 ## Template
-Template Link [Figma](https://www.figma.com/file/tlB40vEIQYjpUNGmncWjov/HackProtect-(Community)?node-id=2%3A2)
+Template Link [Figma](https://www.figma.com/file/ncwPMsmU6V40LEI2snrcPb/Cryptocurrency-Landing-Page-(Community)?node-id=0%3A1)
