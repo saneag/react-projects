@@ -12,6 +12,9 @@ html {
 #root {
     background-color: #000;
     min-height: 100vh;
+    background-image: url('/assets/img/bg-img.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
 }
 
 .container {
