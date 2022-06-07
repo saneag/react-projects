@@ -11,14 +11,16 @@
         font-weight: bold;
         color: #fff;
         text-align: center;
-        margin-bottom: 1rem;
+        margin-bottom: 1.4rem;
+        line-height: 1.2em;
     }
 
     & p:nth-of-type(2) {
         width: 580px;
-        color: #898CA9;
+        color: $secondary-color;
         text-align: center;
         font-size: 1.1rem;
+        line-height: 1.5em;
     }
 
     .get_started_btn {
@@ -40,5 +42,38 @@
 #second_section {
     min-height: 600px;
 
-    .cards_container {}
+    .cards_container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+        justify-items: center;
+        grid-gap: 10px;
+
+        .card {
+            width: 360px;
+            height: 350px;
+            padding: 2rem 3rem;
+            background-color: #1A1B23;
+            border-radius: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+
+            .cards_title {
+                color: white;
+                font-size: 30px;
+                font-weight: bold;
+            }
+
+            .cards_text {
+                color: $secondary-color;
+                line-height: 1.2em;
+                text-align: center;
+            }
+
+            .cards_button {
+                color: #B982FF;
+            }
+        }
+    }
 }
