@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { useLocation } from 'react-router-dom'
 
 import coinFlip from '../assets/img/logo.png'
-import bgImage from '../assets/img/bg-img.png'
 
 function Header() {
     const linksName = ['buy_sell', 'grow', 'markets', 'business', 'support']
