@@ -17,7 +17,7 @@ import './styles/App.scss'
 
 function App() {
     return (
-        <div>
+        <>
             <Router>
                 <Header />
                 <Routes>
@@ -32,7 +32,7 @@ function App() {
                     <Route path='*' element={<Error />} />
                 </Routes>
             </Router>
-        </div>
+        </>
     )
 }
 
