@@ -12,13 +12,20 @@ html {
 #root {
     background-color: #000;
     min-height: 100vh;
-    background-image: url('/assets/img/bg-img.png');
-    background-size: 100%;
-    background-repeat: no-repeat;
 }
 
 .container {
     max-width: 1170px;
     margin: 0 auto;
     font-family: $Open-Sans;
+    position: relative;
+    z-index: 99;
+}
+
+.bg_image {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
 }
