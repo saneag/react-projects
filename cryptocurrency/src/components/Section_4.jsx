@@ -5,7 +5,11 @@ import shield_img from '../assets/img/shield_img.png'
 function Section_4() {
     return (
         <section className='text_block section_4'>
-            <img src={shield_img} />
+            <div className='shield'>
+                <img src={shield_img} />
+                <div className='shield_grad_circle'></div>
+                <div className='shield_grad_rect'></div>
+            </div>
             <div>
                 <p>24/7 access to full service customer support</p>
                 <p>We invest more resources than any other platform in making sure great support from real people is a click away, whenever you need it.</p>

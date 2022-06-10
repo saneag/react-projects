@@ -40,6 +40,11 @@
     .crypto_caption:first-of-type {
         font-size: 4.5rem;
     }
+
+    .button_link {
+        color: #B982FF;
+        margin-top: 30px;
+    }
 }
 
 #cards_block {
@@ -98,5 +103,35 @@
     .get_started_btn {
         background: transparent;
         border: 1px solid white;
+
+        &:hover {
+            background: white;
+            color: #1A1B23;
+        }
+    }
+
+    .shield {
+        position: relative;
+
+        .shield_grad_circle {
+            border-radius: 50%;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: linear-gradient(180deg, rgba(255, 79, 24, 0) 0%, #FF4117 100%);
+            filter: blur(200px);
+        }
+
+        .shield_grad_rect {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(180deg, #82392C 0%, #D0A22C 100%);
+            filter: blur(300px);
+        }
     }
 }
