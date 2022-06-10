@@ -1,4 +1,4 @@
-#text_block {
+.text_block {
     min-height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
@@ -26,7 +26,7 @@
         background-image: linear-gradient(225deg, #18C8FF 14.89%, #933FFE 85.85%);
         background-size: 150% auto;
         transition: all 0.3s ease;
-        padding: 20px 30px;
+        padding: 20px 40px;
         border-radius: 10px;
         color: white;
         font-weight: 900;
@@ -80,5 +80,23 @@
                 color: #B982FF;
             }
         }
+    }
+}
+
+.section_4 {
+    flex-direction: row;
+
+    & p:first-of-type {
+        font-size: 4rem;
+        text-align: left;
+    }
+
+    & p:nth-of-type(2) {
+        text-align: left;
+    }
+
+    .get_started_btn {
+        background: transparent;
+        border: 1px solid white;
     }
 }
