@@ -1,7 +1,9 @@
 import React from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import coinFlip from '../assets/img/logo.png'
+
+import NavBarLink from './NavBarLink'
 
 function Header() {
     const linksName = ['buy_sell', 'grow', 'markets', 'business', 'support']
@@ -24,10 +26,6 @@ function Header() {
     )
 }
 
-function NavBarLink({ pageName, i }) {
-    return (
-        <NavLink to={`/${pageName}`} className={({ isActive }) => (isActive) ? "active_page" : ""}>{pageName.replace(/_/, ' / ')}</NavLink>
-    )
-}
+
 
 export default Header

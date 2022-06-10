@@ -1,10 +1,9 @@
-#first_section {
+#text_block {
     min-height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 
     & p:first-of-type {
         font-size: 7rem;
@@ -37,10 +36,16 @@
             background-position: 100% 0;
         }
     }
+
+    .crypto_caption:first-of-type {
+        font-size: 4.5rem;
+    }
 }
 
-#second_section {
+#cards_block {
     min-height: 600px;
+    margin-top: 200px;
+    position: relative;
 
     .cards_container {
         display: grid;
