@@ -62,7 +62,7 @@
             width: 360px;
             height: 350px;
             padding: 2rem 3rem;
-            background-color: #1A1B23;
+            background-color: $primary-color;
             border-radius: 10px;
             display: flex;
             flex-direction: column;
@@ -106,7 +106,7 @@
 
         &:hover {
             background: white;
-            color: #1A1B23;
+            color: $primary-color;
         }
     }
 
@@ -132,6 +132,26 @@
             height: 100%;
             background: linear-gradient(180deg, #82392C 0%, #D0A22C 100%);
             filter: blur(300px);
+        }
+    }
+}
+
+.section_5 {
+    table {
+        width: 100%;
+        color: white;
+        background-color: $primary-color;
+        padding: 20px 32px;
+        border-radius: 25px;
+
+        tr {
+            td {
+                vertical-align: middle;
+
+                .coin_button a {
+                    color: white;
+                }
+            }
         }
     }
 }

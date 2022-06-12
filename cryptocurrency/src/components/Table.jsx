@@ -1,16 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-function Table(coin) {
+function Table(coin, graph) {
     return (
-        <>
-            <div className='table_cell'>
-                <span>{coin.name}</span>
-                <span>{coin.symbol}</span>
-                <span>{coin.price}</span>
-                <span>{coin.price_change_24h}</span>
-                <span>{coin.graph}</span>
-            </div>
-        </>
+        <tr>
+            <td className='coin_name'>{coin.name}</td>
+            <td className='coin_symbol'>{coin.symbol}</td>
+            <td className='coin_price'>{coin.price}</td>
+            <td className='coin_price_change_24h'>{coin.price_change_24h}</td>
+            <td className=''><img src={coin.graph} /></td>
+            <td className='coin_button'><Link to="/">Trade Now <FontAwesomeIcon icon={faArrowRight} /></Link></td>
+        </tr>
     )
 }
 
