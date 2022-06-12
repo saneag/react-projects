@@ -25,6 +25,7 @@ function Section_5() {
             })
     }, [])
 
+    console.log(coins)
 
     return (
         <section className="text_block section_5">
