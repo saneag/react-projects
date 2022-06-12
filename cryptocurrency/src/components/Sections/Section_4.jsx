@@ -1,6 +1,6 @@
 import React from 'react'
 
-import shield_img from '../assets/img/shield_img.png'
+import shield_img from '../../assets/img/shield_img.png'
 
 function Section_4() {
     return (

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
-import Table from '../components/Table'
+import Table from '../../components/Table'
 
 function importAll(r) {
     let images = {};
@@ -11,7 +11,7 @@ function importAll(r) {
     return images;
 }
 
-const images = importAll(require.context('../assets/img/graphs/', false, /\.(png|jpe?g|svg)$/));
+const images = importAll(require.context('../../assets/img/graphs/', false, /\.(png|jpe?g|svg)$/));
 const graphs = ['bitcoin_graph.png', 'ethereum_graph.png', 'cardano_graph.png', 'wax_graph.png', 'polkadot_graph.png']
 
 function Section_5() {
