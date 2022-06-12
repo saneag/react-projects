@@ -1,5 +1,10 @@
 .text_block {
-    min-height: calc(100vh - 80px);
+    min-height: 100vh;
+
+    &:first-of-type {
+        min-height: calc(100vh - 80px);
+    }
+
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,8 +54,8 @@
 }
 
 #cards_block {
-    min-height: 500px;
     margin-top: 200px;
+    margin-bottom: 400px;
     position: relative;
 
     .cards_container {
@@ -90,6 +95,7 @@
 }
 
 .section_4 {
+    margin-top: 100px;
     flex-direction: row;
 
     & p:first-of-type {
@@ -138,6 +144,8 @@
 }
 
 .section_5 {
+    min-height: 100vh;
+
     table {
         margin-top: 50px;
         width: 100%;
