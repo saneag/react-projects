@@ -44,6 +44,7 @@
     .button_link {
         color: $tertiary-color;
         margin-top: 30px;
+        font-weight: 600;
     }
 }
 
@@ -138,37 +139,68 @@
 
 .section_5 {
     table {
+        margin-top: 50px;
         width: 100%;
+        height: 400px;
         color: white;
         background-color: $primary-color;
-        padding: 20px 32px;
         border-radius: 25px;
+        border-collapse: collapse;
+        border-spacing: 30px;
 
         tr {
+            &:not(:last-of-type) {
+                border-bottom: 1px solid #2B2C3B;
+            }
+
             td {
                 vertical-align: middle;
                 font-weight: bold;
+                font-size: 1.2rem;
 
-                &.coin_name {}
+                &.coin_name {
+                    padding: 0 30px;
+                }
 
                 &.coin_symbol {
                     color: $tertiary-color;
+                    padding-right: 30px;
+                    text-align: center;
                 }
 
-                &.coin_price_red {
-                    color: #FF8282;
+                &.coin_price {
+                    padding-left: 20px;
+                    text-align: right;
                 }
 
-                &.coin_price_green {
-                    color: #0DBB7C;
+                &.coin_price_change_24h {
+                    text-align: right;
+
+                    &.coin_price_red {
+                        color: #FF8282;
+                    }
+
+                    &.coin_price_green {
+                        color: #0DBB7C;
+                    }
                 }
 
                 &.coin_graph {
-                    width: 80px;
+                    width: 0;
+                    padding: 0 20px;
+                    text-align: center;
                 }
 
-                a {
-                    color: white;
+                &.coin_button {
+                    width: 140px;
+                    text-align: right;
+                    padding-right: 30px;
+
+                    a {
+                        color: white;
+                        font-size: 1rem;
+                        font-weight: normal;
+                    }
                 }
             }
         }
