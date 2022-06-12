@@ -42,7 +42,7 @@
     }
 
     .button_link {
-        color: #B982FF;
+        color: $tertiary-color;
         margin-top: 30px;
     }
 }
@@ -82,7 +82,7 @@
             }
 
             .cards_button {
-                color: #B982FF;
+                color: $tertiary-color;
             }
         }
     }
@@ -147,8 +147,27 @@
         tr {
             td {
                 vertical-align: middle;
+                font-weight: bold;
 
-                .coin_button a {
+                &.coin_name {}
+
+                &.coin_symbol {
+                    color: $tertiary-color;
+                }
+
+                &.coin_price_red {
+                    color: #FF8282;
+                }
+
+                &.coin_price_green {
+                    color: #0DBB7C;
+                }
+
+                &.coin_graph {
+                    width: 80px;
+                }
+
+                a {
                     color: white;
                 }
             }

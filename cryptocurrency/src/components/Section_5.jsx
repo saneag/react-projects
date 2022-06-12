@@ -5,11 +5,14 @@ import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 import Table from '../components/Table'
 
-import bitcoin_graph from '../assets/img/graphs/bitcoin_graph.png'
-import ethereum_graph from '../assets/img/graphs/ethereum_graph.png'
-import cardano_graph from '../assets/img/graphs/cardano_graph.png'
-import wax_graph from '../assets/img/graphs/wax_graph.png'
-import polkadot_graph from '../assets/img/graphs/polkadot_graph.png'
+function importAll(r) {
+    let images = {};
+    r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
+    return images;
+}
+
+const images = importAll(require.context('../assets/img/graphs/', false, /\.(png|jpe?g|svg)$/));
+const graphs = ['bitcoin_graph.png', 'ethereum_graph.png', 'cardano_graph.png', 'wax_graph.png', 'polkadot_graph.png']
 
 function Section_5() {
     const [coins, setCoins] = React.useState([])
@@ -22,7 +25,6 @@ function Section_5() {
             })
     }, [])
 
-    const graphs = [bitcoin_graph, ethereum_graph, cardano_graph, wax_graph, polkadot_graph]
 
     return (
         <section className="text_block section_5">
@@ -32,7 +34,7 @@ function Section_5() {
             <table>
                 <tbody>
                     {
-                        coins.map((coin, index) => <Table key={coin.name} {...coin} graph={graphs[index]} />)
+                        coins.map((coin, index) => <Table key={coin.name} {...coin} graph={images[graphs[index]]} />)
                     }
                 </tbody>
             </table>
