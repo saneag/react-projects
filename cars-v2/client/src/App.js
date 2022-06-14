@@ -1,11 +1,22 @@
 import React from 'react'
+import { BrowserRouter as Router } from 'react-router-dom'
 
-import './styles/css/App.scss'
+import { useRoutes } from './Routes'
+import Loading from './components/Loading'
+import Header from './components/Header'
+
+import './styles/App.scss'
 
 function App() {
+  const routes = useRoutes(false)
   return (
-    <div>
-    </div>
+    <>
+      <Loading />
+      <Router>
+        <Header />
+        {routes}
+      </Router>
+    </>
   )
 }
 
