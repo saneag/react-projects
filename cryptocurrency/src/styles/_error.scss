@@ -1,0 +1,35 @@
+.error_page {
+    height: calc(100vh - 170px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+        height: calc(5rem + 10px);
+        font-family: $Open-Sans;
+        font-weight: bold;
+        font-size: 5rem;
+
+        background: linear-gradient(to right, #18C8FF 14.89%, #933FFE 85.85%);
+        background-size: 200% auto;
+
+        color: #18C8FF;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        animation: error_animation 5s linear infinite;
+
+        @keyframes error_animation {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    }
+}

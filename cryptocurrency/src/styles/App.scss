@@ -1,0 +1,32 @@
+@import '_resets';
+@import '_variables';
+@import '_header';
+@import '_home';
+@import '_footer';
+@import '_error';
+
+html {
+    scroll-behavior: smooth;
+}
+
+#root {
+    background-color: #000;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1170px;
+    padding: 0 20px;
+    margin: 0 auto;
+    font-family: $Open-Sans;
+    position: relative;
+    z-index: 99;
+}
+
+.bg_image {
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
