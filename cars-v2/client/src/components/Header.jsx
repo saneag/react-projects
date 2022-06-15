@@ -30,8 +30,4 @@ function Header({ toggleTheme }) {
     )
 }
 
-function NavLinks() {
-
-}
-
 export default Header
