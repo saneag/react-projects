@@ -7,16 +7,26 @@ import Header from './components/Header'
 
 import './styles/App.scss'
 
+export const ThemeContext = React.createContext(null)
+
 function App() {
+
+  const [theme, setTheme] = React.useState('dark')
+  const toggleTheme = () => setTheme(theme === 'dark' ? 'light' : 'dark')
   const routes = useRoutes(false)
+
   return (
-    <>
-      <Loading />
-      <Router>
-        <Header />
-        {routes}
-      </Router>
-    </>
+    <ThemeContext.Provider value={{ theme, toggleTheme }}>
+      <div className='App' id={theme}>
+        {/* <Loading /> */}
+        <div className='container'>
+          <Router>
+            <Header toggleTheme={toggleTheme} />
+            {routes}
+          </Router>
+        </div>
+      </div>
+    </ThemeContext.Provider>
   )
 }
 

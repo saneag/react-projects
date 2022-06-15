@@ -3,6 +3,7 @@
 @import '_header';
 @import '_home';
 @import '_footer';
+@import '_signin';
 
 html {
     scroll-behavior: smooth;
@@ -27,9 +28,34 @@ html {
     background: #555555;
 }
 
-body {
+.App {
+    height: 100vh;
     font-family: 'Zen Kurenaido', sans-serif;
-    background-color: #282C34FF;
     transition: all 0.5s ease;
     user-select: none;
+
+    #tc_img {
+        transition: all 0.3s ease;
+    }
+}
+
+.container {
+    max-width: 1170px;
+    margin: 0 auto;
+}
+
+#dark {
+    background-color: #282C34FF;
+
+    #tc_img {
+        transform: rotate(0deg);
+    }
+}
+
+#light {
+    background-color: #fff;
+
+    #tc_img {
+        transform: rotate(180deg);
+    }
 }
