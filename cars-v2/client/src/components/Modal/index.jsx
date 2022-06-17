@@ -27,27 +27,18 @@ function Modal({ cars, showModal, setShowModal }) {
                 <motion.div className={styles.grid}
                     initial={{ x: '100vw' }}
                     animate={{ x: '0px' }}>
-                    {/* <p><span>Marca:</span> {car.marca}</p>
-                        <p><span>Model:</span> {car.model}</p>
-                        <p><span>Anul:</span> {car.anul}</p>
-                        <p><span>Combustibil:</span> {car.combustibil}</p>
-                        <p><span>Capacitatea:</span> {car.capacitatea}</p>
-                        <p><span>Puterea:</span> {car.puterea}</p>
-                        <p><span>Tractiunea:</span> {car.tractiunea}</p>
-                        <p><span>Cutia:</span> {car.cutia}</p>
-                        <p><span>Pret:</span> {car.pret}</p> */}
                     <div>
                         {
                             Object.keys(car).map((key, index) =>
-                                index != 9 ? <p key={key}><span>{key} :</span></p> : '')
+                                index !== 9 ? <p key={key}><span>{key} :</span></p> : '')
                         }
                     </div>
                     <div>
                         {
                             Object.values(car).map((value, index) =>
-                                index != 9 ? <p key={value}>
-                                    {index == 8 ? `$ ${value}` : value}
-                                    {index === 4 ? ' ml' : index == 5 ? ' hp' : ''}
+                                index !== 9 ? <p key={value}>
+                                    {index === 8 ? `$ ${value}` : value}
+                                    {index === 4 ? ' ml' : index === 5 ? ' hp' : ''}
                                 </p> : '')
                         }
                     </div>

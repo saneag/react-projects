@@ -64,4 +64,16 @@ html {
             color: #272c35;
         }
     }
+
+    .pagination {
+        li {
+            a {
+                color: #272c35;
+
+                &:hover {
+                    border: 2px solid #FFA7A9;
+                }
+            }
+        }
+    }
 }

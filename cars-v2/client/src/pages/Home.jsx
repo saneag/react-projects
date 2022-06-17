@@ -9,24 +9,39 @@ import Skeleton from '../components/Skeleton'
 function Home() {
 
     const [cars, setCars] = React.useState([])
-    const { selectedImg, setSelectedImg } = React.useContext(ShowModalCar)
+    const { selectedImg } = React.useContext(ShowModalCar)
     const [showModal, setShowModal] = React.useState(false)
     const [loading, setLoading] = React.useState(true)
+    const [page, setPage] = React.useState(1)
+    const [carsLimit, setCarsLimit] = React.useState(12)
+    const [showReadMore, setShowReadMore] = React.useState(true)
 
     React.useEffect(() => {
-        fetch('https://62a36f1d21232ff9b21fe3d5.mockapi.io/cars')
+        setLoading(true)
+        fetch(`https://62a36f1d21232ff9b21fe3d5.mockapi.io/cars?page=${page}&limit=${carsLimit}`)
             .then(res => res.json())
             .then(data => {
                 setCars(data)
                 setLoading(false)
+                if (page !== 1) {
+                    setCarsLimit(12)
+                }
             })
-    }, [])
+    }, [page, carsLimit])
+
+
+    const showMoreCars = () => {
+        if (carsLimit <= cars.length) {
+            setCarsLimit(carsLimit + 12)
+        } else
+            setShowReadMore(false)
+    }
 
     return (
         <main>
             <div className="cars_gallery">
                 {
-                    loading ? [...Array(21)].map((_, index) => <Skeleton key={index} />) :
+                    loading ? [...Array(carsLimit)].map((_, index) => <Skeleton key={index} />) :
                         cars.map(car => <Cars key={car.marca + car.model + car.pret} {...car} />)
                 }
             </div>
@@ -35,7 +50,12 @@ function Home() {
                     <Modal cars={cars} showModal={showModal} setShowModal={setShowModal} />
                 )
             }
-            <Pagination />
+            <Pagination onChangePage={number => setPage(number)} />
+            <div className='showMore'>
+                {
+                    showReadMore && <button className='showMoreBtn' onClick={showMoreCars}>Show more</button>
+                }
+            </div>
         </main>
     )
 }

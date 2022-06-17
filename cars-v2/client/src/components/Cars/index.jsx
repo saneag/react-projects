@@ -1,13 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { ShowModalCar } from '../../App'
-import Modal from '../Modal'
 
 import styles from './styles.module.scss'
 
 function Car(car) {
-    const { selectedImg, setSelectedImg } = React.useContext(ShowModalCar)
-    const [showModal, setShowModal] = React.useState(false)
+    const { setSelectedImg } = React.useContext(ShowModalCar)
 
     return (
         <div className={styles.root}>
