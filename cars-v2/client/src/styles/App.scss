@@ -29,7 +29,7 @@ html {
 }
 
 .App {
-    height: 100vh;
+    min-height: 100vh;
     font-family: 'Zen Kurenaido', sans-serif;
     transition: all 0.5s ease;
     user-select: none;
@@ -40,12 +40,12 @@ html {
 }
 
 .container {
-    max-width: 1170px;
+    max-width: 1440px;
     margin: 0 auto;
 }
 
 #dark {
-    background-color: #282C34FF;
+    background-color: #272c35;
 
     #tc_img {
         transform: rotate(0deg);
@@ -57,5 +57,11 @@ html {
 
     #tc_img {
         transform: rotate(180deg);
+    }
+
+    .cars_gallery {
+        p {
+            color: #272c35;
+        }
     }
 }
