@@ -21,20 +21,19 @@ function Home() {
         fetch(`https://62a36f1d21232ff9b21fe3d5.mockapi.io/cars?page=${page}&limit=${carsLimit}`)
             .then(res => res.json())
             .then(data => {
-                setCars(data)
                 setLoading(false)
+                setCars(data)
                 if (page !== 1) {
                     setCarsLimit(12)
                 }
+                setShowReadMore(carsLimit > data.length ? false : true)
             })
     }, [page, carsLimit])
-
 
     const showMoreCars = () => {
         if (carsLimit <= cars.length) {
             setCarsLimit(carsLimit + 12)
-        } else
-            setShowReadMore(false)
+        }
     }
 
     return (
@@ -53,7 +52,7 @@ function Home() {
             <Pagination onChangePage={number => setPage(number)} />
             <div className='showMore'>
                 {
-                    showReadMore && <button className='showMoreBtn' onClick={showMoreCars}>Show more</button>
+                    showReadMore && page === 1 && <button className='showMoreBtn' onClick={showMoreCars}>Show more</button>
                 }
             </div>
         </main>
