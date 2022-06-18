@@ -2,8 +2,8 @@ import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
 
 import { useRoutes } from './Routes'
-import Loading from './components/Loading'
 import Header from './components/Header'
+import Footer from './components/Footer'
 
 import './styles/App.scss'
 
@@ -27,6 +27,7 @@ function App() {
               <Header toggleTheme={toggleTheme} />
               {routes}
             </Router>
+            <Footer />
           </div>
         </div>
       </ShowModalCar.Provider>

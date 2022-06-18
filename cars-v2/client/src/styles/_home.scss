@@ -13,7 +13,6 @@ main {
     .showMore {
         display: flex;
         justify-content: center;
-        padding-bottom: 20px;
 
         .showMoreBtn {
             padding: 1em;
@@ -51,5 +50,17 @@ main {
                 }
             }
         }
+    }
+}
+
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-bottom: 10px;
+
+    p {
+        font-weight: bold;
+        color: #fff;
     }
 }
