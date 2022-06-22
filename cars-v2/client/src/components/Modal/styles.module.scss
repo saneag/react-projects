@@ -7,20 +7,38 @@
     background: rgba(0, 0, 0, 0.5);
     z-index: 99;
 
-    img {
-        display: block;
-        max-width: 700px;
-        margin: 60px auto;
-        box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
-        border-radius: 40px;
-    }
-}
+    .modal_content {
+        background-color: #282C34;
+        width: 800px;
+        margin: 0 auto;
+        border-radius: 20px;
+        transition: .3s ease;
 
-.modal_content {
-    background-color: #282C34;
-    width: 800px;
-    margin: 0 auto;
-    border-radius: 20px;
+        @media screen and (max-width: 990px) {
+            width: 600px;
+        }
+
+        @media screen and (max-width: 670px) {
+            width: 400px;
+        }
+
+        img {
+            display: block;
+            max-width: 700px;
+            margin: 60px auto;
+            box-shadow: 3px 5px 7px rgba(0, 0, 0, 0.5);
+            border-radius: 40px;
+            transition: .3s ease;
+
+            @media screen and (max-width: 990px) {
+                max-width: 500px;
+            }
+
+            @media screen and (max-width: 670px) {
+                max-width: 300px;
+            }
+        }
+    }
 }
 
 .grid {
@@ -40,6 +58,10 @@
         font-size: 1.3em;
         font-style: italic;
         line-height: 1.2;
+
+        @media screen and (max-width: 670px) {
+            font-size: 1.1em;
+        }
 
         span {
             font-weight: bold;

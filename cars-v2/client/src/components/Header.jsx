@@ -10,6 +10,8 @@ import SignUp from '../pages/SignUp'
 function Header({ toggleTheme }) {
     const navLinks = ['home', 'about', 'contact']
 
+    const [isVisibleBtn, setIsVisibleBtn] = React.useState(false)
+
     return (
         <header>
             <nav>
@@ -25,6 +27,15 @@ function Header({ toggleTheme }) {
                     <Link to="/signin" element={<SignIn />} className='sign_in auth_btn'>Sign in</Link>
                     <Link to="/signup" element={<SignUp />} className='sign_up auth_btn'>Sign up</Link>
                 </div>
+                {
+                    isVisibleBtn && (
+                        <div id="burger_menu_btn">
+                            <span className='bar top'></span>
+                            <span className='bar middle'></span>
+                            <span className='bar bottom'></span>
+                        </div>
+                    )
+                }
             </nav>
         </header>
     )

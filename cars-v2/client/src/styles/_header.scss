@@ -33,6 +33,10 @@ header {
         ul {
             display: flex;
 
+            @media screen and (max-width: 990px) {
+                display: none;
+            }
+
             li {
                 &:not(:first-of-type) {
                     margin-left: 50px;
