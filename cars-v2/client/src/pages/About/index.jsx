@@ -65,7 +65,6 @@ function About() {
 }
 
 function People({ name, image, description, links_social }) {
-    console.log(image)
     return (
         <div id={name}>
             <img src={image} alt={name} />
