@@ -2,7 +2,6 @@ import React from 'react'
 
 function SignIn() {
     const [checked, setChecked] = React.useState(false);
-    console.log(checked)
     return (
         <div className='sign_in_page'>
             <div className='form'>
