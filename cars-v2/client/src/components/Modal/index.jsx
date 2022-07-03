@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import { ShowModalCar } from '../../App'
+import { ShowModalCar } from '../../pages/Home'
 
 import styles from './styles.module.scss'
 
@@ -13,7 +13,6 @@ function Modal({ cars, showModal, setShowModal }) {
             setSelectedImg(null)
         }
     }
-
     const car = cars.find(car => car.link === selectedImg)
 
     return (
@@ -23,8 +22,8 @@ function Modal({ cars, showModal, setShowModal }) {
             <motion.div className={styles.modal_content}>
                 <motion.img src={selectedImg}
                     initial={{ y: '-100vh' }}
-                    animate={{ y: '50px' }} />
-                <motion.div className={styles.grid}
+                    animate={{ y: '0px' }} />
+                <motion.div className={styles.info}
                     initial={{ x: '100vw' }}
                     animate={{ x: '0px' }}>
                     <div>

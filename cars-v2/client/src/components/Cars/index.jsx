@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion, LazyMotion, domAnimation } from 'framer-motion'
-import { ShowModalCar } from '../../App'
+import { ShowModalCar } from '../../pages/Home'
 
 import styles from './styles.module.scss'
 
