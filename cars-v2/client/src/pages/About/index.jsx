@@ -7,7 +7,7 @@ import ion from '../../assets/photo_2021-12-19_21-09-30.jpg'
 import instagram from '../../assets/instagram.svg'
 import facebook from '../../assets/facebook.svg'
 
-import find_age from '../../help/find_age.js'
+import find_age from '../../utils/find_age.js'
 
 import styles from './styles.module.scss'
 
