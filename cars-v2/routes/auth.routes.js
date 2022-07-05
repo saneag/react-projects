@@ -9,7 +9,7 @@ const router = Router()
 router.post(
     '/register',
     [
-        check('name', 'Name is required').not().isEmpty().isName(),
+        check('name', 'Name is required').not().isEmpty(),
         check('email', 'Invalid email').isEmail(),
         check('password', 'Minimum length of password is 6 symbols').isLength({ min: 6 })
     ],
@@ -46,7 +46,7 @@ router.post(
 router.post(
     '/login',
     [
-        check('name', 'Enter the right name').not().isEmpty().isName(),
+        check('name', 'Enter the right name').not().isEmpty(),
         check('email', 'Enter the right email').normalizeEmail().isEmail(),
         check('password', 'Enter the rigth password').exists()
     ],

@@ -1,0 +1,26 @@
+.root {
+    display: flex;
+    flex-direction: column;
+
+    p {
+        font-size: 1.1em;
+        line-height: 30px;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        cursor: pointer;
+
+        .model {
+            font-style: italic;
+            font-weight: normal;
+        }
+    }
+
+    .image {
+        width: 300px;
+        height: 169px;
+        object-fit: cover;
+        border-radius: 10px;
+        cursor: pointer;
+    }
+}
