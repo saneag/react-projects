@@ -40,16 +40,12 @@ function Home() {
     return (
         <ShowModalCar.Provider value={{ selectedImg, setSelectedImg }}>
             <main>
-                <div className='cars_block'>
-                    <div className="cars_gallery col left">
-                        {
-                            loading ? [...Array(carsLimit)].map((_, index) => <Skeleton key={index} />) :
-                                cars.map(car => <Cars key={car.marca + car.model + car.pret} {...car} />)
-                        }
-                    </div>
-                    <div className='col right'>
-                        <Search />
-                    </div>
+                <Search />
+                <div className="cars_gallery">
+                    {
+                        loading ? [...Array(carsLimit)].map((_, index) => <Skeleton key={index} />) :
+                            cars.map(car => <Cars key={car.marca + car.model + car.pret} {...car} />)
+                    }
                 </div>
                 {
                     selectedImg && (
