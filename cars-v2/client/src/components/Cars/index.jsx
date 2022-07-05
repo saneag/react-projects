@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import imageCompression from 'browser-image-compression'
+// import imageCompression from 'browser-image-compression'
 import { ShowModalCar } from '../../pages/Home'
 
 import styles from './styles.module.scss'

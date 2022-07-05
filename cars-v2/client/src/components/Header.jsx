@@ -17,7 +17,7 @@ function Header({ toggleTheme }) {
             <nav>
                 <div id='theme-changer_btn'>
                     <button onClick={() => { toggleTheme() }}>
-                        <img src={themeIcon} id='tc_img' />
+                        <img src={themeIcon} id='tc_img' alt='theme_changer' />
                     </button>
                 </div>
                 <ul>
