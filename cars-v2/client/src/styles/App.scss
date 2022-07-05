@@ -45,7 +45,7 @@ html {
 }
 
 #dark {
-    background-color: #272c35;
+    background-color: $primary-color;
 
     #tc_img {
         transform: rotate(0deg);
@@ -59,25 +59,16 @@ html {
         transform: rotate(180deg);
     }
 
-    header {
-        background: rgba(120, 120, 120, 0.4);
-    }
-
-    .sign_up:hover {
-        background-color: #f19f32;
-        border: 1px solid transparent;
-    }
-
     .cars_gallery {
         p {
-            color: #272c35;
+            color: $primary-color;
         }
     }
 
     .pagination {
         li {
             a {
-                color: #272c35;
+                color: $primary-color;
 
                 &:hover {
                     border: 2px solid #FFA7A9;
@@ -88,7 +79,7 @@ html {
 
     footer {
         p {
-            color: #272c35;
+            color: $primary-color;
         }
     }
 }
