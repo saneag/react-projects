@@ -59,6 +59,15 @@ html {
         transform: rotate(180deg);
     }
 
+    header {
+        background: rgba(120, 120, 120, 0.4);
+    }
+
+    .sign_up:hover {
+        background-color: #f19f32;
+        border: 1px solid transparent;
+    }
+
     .cars_gallery {
         p {
             color: #272c35;
