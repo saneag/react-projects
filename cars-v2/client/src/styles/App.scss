@@ -50,6 +50,11 @@ html {
     #tc_img {
         transform: rotate(0deg);
     }
+
+    .search_icon,
+    .delete_icon {
+        color: $primary-color;
+    }
 }
 
 #light {
@@ -59,16 +64,10 @@ html {
         transform: rotate(180deg);
     }
 
-    .cars_gallery {
-        p {
-            color: $primary-color;
-        }
-    }
-    
-    #alex, #danu, #ion {
-	  p {
-            color: $primary-color;
-        }
+    .search_input {
+        background-color: $primary-color;
+        caret-color: $yellow;
+        color: white;
     }
 
     .pagination {
@@ -83,7 +82,11 @@ html {
         }
     }
 
-    footer {
+    .cars_gallery,
+    footer,
+    #alex,
+    #danu,
+    #ion {
         p {
             color: $primary-color;
         }
