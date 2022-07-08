@@ -37,9 +37,9 @@ function About() {
         danu: {
             name: 'danu',
             image: danu,
-            description: `Eu sunt Dănuț, am ${find_age('2001/06/19')} ani, pasionat de calculatoare, în special de jocuri video.
-        Mă hrănesc cu nervii oamenilor iar o zi fără un om enervat, pentru mine e o zi pierdută. Din păcate,
-        imi place să vorbesc mult, ceea ce uneori este un minus o.O`,
+            description: `Eu sunt Danut, am ${find_age('2001/06/19')} ani, pasionat de calculatoare, în special de jocuri video.
+        Ma hranesc cu nervii oamenilor iar o zi fara un om enervat, pentru mine e o zi pierduta. Din pacate,
+        imi place sa vorbesc mult, ceea ce uneori este un minus o.O`,
             links_social: {
                 facebook: 'https://www.facebook.com/raileanu.daniel19/',
                 instagram: 'https://www.instagram.com/raileanu.d19/'
