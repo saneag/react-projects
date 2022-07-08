@@ -9,6 +9,7 @@ import Skeleton from '../components/Skeleton'
 
 export const ShowModalCar = React.createContext(null)
 export const SearchContext = React.createContext(null)
+export const SortContext = React.createContext(null)
 
 function Home() {
     const [cars, setCars] = React.useState([])
@@ -19,6 +20,7 @@ function Home() {
     const [carsLimit, setCarsLimit] = React.useState(12)
     const [showReadMore, setShowReadMore] = React.useState(true)
     const [search, setSearch] = React.useState('')
+    const [sort, setSort] = React.useState('A-Z')
 
     React.useEffect(() => {
         setLoading(true)
@@ -47,7 +49,9 @@ function Home() {
                     <SearchContext.Provider value={{ search, setSearch }}>
                         <Search />
                     </SearchContext.Provider>
-                    <Sort />
+                    <SortContext.Provider value={{ sort, setSort }}>
+                        <Sort />
+                    </SortContext.Provider>
                 </div>
                 <div className="cars_gallery">
                     {
