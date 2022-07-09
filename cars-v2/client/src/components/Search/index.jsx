@@ -7,6 +7,7 @@ import styles from './styles.module.scss'
 
 function Search() {
     const { search, setSearch } = React.useContext(SearchContext)
+
     return (
         <div className={styles.search_input}>
             <div>

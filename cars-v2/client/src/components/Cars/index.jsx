@@ -36,7 +36,7 @@ function Car(car) {
                                 animate={{ opacity: 1 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <span>Anul: <span className={styles.year}>{car.anul}</span></span>
+                                <span>Anul: <span className={styles.year}>{car.an}</span></span>
                                 <span> Pretul: <span className={styles.cash}>$ {price}</span></span>
                             </motion.div>
                         </div>}
