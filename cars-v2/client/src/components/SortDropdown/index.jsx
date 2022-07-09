@@ -4,7 +4,7 @@ import { SortCarsContext } from '../../pages/Home'
 
 import styles from './styles.module.scss'
 
-function SortDropdown({ handleClick, sortMethods, sortMethodsAsc, sortMethodsDesc }) {
+function SortDropdown({ handleClick, sortMethods }) {
     const { sortCars } = React.useContext(SortCarsContext)
 
     return (
