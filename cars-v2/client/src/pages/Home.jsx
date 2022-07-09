@@ -9,7 +9,8 @@ import Skeleton from '../components/Skeleton'
 
 export const ShowModalCar = React.createContext(null)
 export const SearchContext = React.createContext(null)
-export const SortContext = React.createContext(null)
+export const SortCarsContext = React.createContext(null)
+export const SortOrderContext = React.createContext(null)
 
 function Home() {
     const [cars, setCars] = React.useState([])
@@ -20,11 +21,12 @@ function Home() {
     const [carsLimit, setCarsLimit] = React.useState(12)
     const [showReadMore, setShowReadMore] = React.useState(true)
     const [search, setSearch] = React.useState('')
-    const [sort, setSort] = React.useState('A-Z')
+    const [sortCars, setSortCars] = React.useState('marca')
+    const [sortOrder, setSortOrder] = React.useState(true)
 
     React.useEffect(() => {
         setLoading(true)
-        fetch(`https://62a36f1d21232ff9b21fe3d5.mockapi.io/cars?page=${page}&limit=${carsLimit}&search=${search}`)
+        fetch(`https://62a36f1d21232ff9b21fe3d5.mockapi.io/cars?sortBy=${sortCars}&order=${sortOrder ? 'desc' : 'asc'}&&page=${page}&limit=${carsLimit}&search=${search}`)
             .then(res => res.json())
             .then(data => {
                 setLoading(false)
@@ -34,13 +36,14 @@ function Home() {
                 }
                 setShowReadMore(carsLimit > data.length ? false : true)
             })
-    }, [page, carsLimit, search])
+    }, [page, carsLimit, search, sortCars, sortOrder])
 
     const showMoreCars = () => {
         if (carsLimit <= cars.length) {
             setCarsLimit(carsLimit + 12)
         }
     }
+
 
     return (
         <ShowModalCar.Provider value={{ selectedImg, setSelectedImg }}>
@@ -49,9 +52,11 @@ function Home() {
                     <SearchContext.Provider value={{ search, setSearch }}>
                         <Search />
                     </SearchContext.Provider>
-                    <SortContext.Provider value={{ sort, setSort }}>
-                        <Sort />
-                    </SortContext.Provider>
+                    <SortCarsContext.Provider value={{ sortCars, setSortCars }}>
+                        <SortOrderContext.Provider value={{ sortOrder, setSortOrder }}>
+                            <Sort />
+                        </SortOrderContext.Provider>
+                    </SortCarsContext.Provider>
                 </div>
                 <div className="cars_gallery">
                     {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { motion } from 'framer-motion';
-import { SortCarsContext } from '../../pages/Home'
+import { SortCarsContext, SortOrderContext } from '../../pages/Home'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
@@ -9,14 +9,19 @@ import SortDropdown from '../SortDropdown';
 
 function Sort_Cars() {
     const { sortCars, setSortCars } = React.useContext(SortCarsContext)
+    const { sortOrder, setSortOrder } = React.useContext(SortOrderContext)
     const [showDropDown, setShowDropDown] = React.useState(false)
 
-    const sortMethods = ['marca', 'model', 'an', 'combustibil',
-        'capacitate', 'putere', 'tractiune', 'cutie', 'pret']
+    const sortMethods = ['marca', 'an', 'putere', 'pret']
 
     const handleClick = (method) => {
         setShowDropDown(!showDropDown)
         setSortCars(method)
+    }
+
+    const handleChange = (e) => {
+        e.stopPropagation()
+        setSortOrder(!sortOrder)
     }
 
     return (
@@ -26,8 +31,9 @@ function Sort_Cars() {
                     className={`sort_title ${styles.sort_title}`}
                     onClick={() => setShowDropDown(!showDropDown)}>
                     Sort by: {sortCars}
-                    <FontAwesomeIcon icon={faArrowDown}
-                        className={styles.sort_arrow} />
+                    <FontAwesomeIcon icon={sortOrder ? faArrowDown : faArrowUp}
+                        className={styles.sort_arrow}
+                        onClick={e => handleChange(e)} />
                 </motion.div>
                 {showDropDown && <SortDropdown handleClick={handleClick} sortMethods={sortMethods} />}
             </div>
