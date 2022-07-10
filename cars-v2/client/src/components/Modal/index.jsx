@@ -1,16 +1,20 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { setShowModal, setSelectedImg } from '../../redux/slices/showModalCarSlice'
+
 import { motion } from 'framer-motion'
-import { ShowModalCar } from '../../pages/Home'
 
 import styles from './styles.module.scss'
 
-function Modal({ cars, showModal, setShowModal }) {
-    const { selectedImg, setSelectedImg } = React.useContext(ShowModalCar)
+function Modal({ cars }) {
+    const dispatch = useDispatch()
+    const selectedImg = useSelector(state => state.showModalCar.selectedImg)
+    const showModal = useSelector(state => state.showModalCar.showModal)
 
     const handleClick = () => {
-        setShowModal(!showModal)
+        dispatch(setShowModal(!showModal))
         if (selectedImg) {
-            setSelectedImg(null)
+            dispatch(setSelectedImg(null))
         }
     }
     const car = cars.find(car => car.link === selectedImg)

@@ -1,11 +1,11 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { motion } from 'framer-motion';
-import { SortCarsContext } from '../../pages/Home'
 
 import styles from './styles.module.scss'
 
 function SortDropdown({ handleClick, sortMethods }) {
-    const { sortCars } = React.useContext(SortCarsContext)
+    const sortBy = useSelector(state => state.sort.sortBy)
 
     return (
         <motion.ul
@@ -20,7 +20,7 @@ function SortDropdown({ handleClick, sortMethods }) {
                     transition={{ duration: 0.4 }}
                     key={index}
                     onClick={() => handleClick(method)}
-                    className={`${styles.sort_option} ${sortCars === method ? styles.active : ''}`}
+                    className={`${styles.sort_option} ${sortBy === method ? styles.active : ''}`}
                 >
                     {method}
                 </motion.li>

@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    sortBy: 'marca'
+    sortBy: 'marca',
+    sortOrder: true
 }
 
 const sortSlice = createSlice({
@@ -10,10 +11,13 @@ const sortSlice = createSlice({
     reducers: {
         setSortBy(state, action) {
             state.sortBy = action.payload
+        },
+        setSortOrder(state, action) {
+            state.sortOrder = action.payload
         }
     }
 })
 
-export const { setSortBy } = sortSlice.actions
+export const { setSortBy, setSortOrder } = sortSlice.actions
 
 export default sortSlice.reducer

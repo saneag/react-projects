@@ -1,5 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
+import { setTheme } from '../redux/slices/changeThemeSlice'
 
 import NavBarLink from './NavBarLink'
 
@@ -7,7 +9,14 @@ import themeIcon from '../assets/color_change.webp'
 import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
 
-function Header({ toggleTheme }) {
+function Header() {
+    const dispatch = useDispatch()
+    const theme = useSelector(state => state.changeTheme.theme)
+
+    const toggleTheme = () => {
+        dispatch(setTheme(theme == 'dark' ? 'light' : 'dark'))
+    }
+
     const navLinks = ['home', 'about', 'contact']
 
     const [isVisibleBtn, setIsVisibleBtn] = React.useState(false)

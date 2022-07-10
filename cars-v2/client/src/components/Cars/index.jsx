@@ -1,13 +1,15 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { setSelectedImg } from '../../redux/slices/showModalCarSlice'
+
 import { motion } from 'framer-motion'
 // import imageCompression from 'browser-image-compression'
 // import { handleImageUpload } from '../../utils/compress_images'
-import { ShowModalCar } from '../../pages/Home'
 
 import styles from './styles.module.scss'
 
 function Car(car) {
-    const { setSelectedImg } = React.useContext(ShowModalCar)
+    const dispatch = useDispatch()
     const [showInfo, setShowInfo] = React.useState(false)
 
     let price = String(car.pret).length > 3 ? String(car.pret).slice(0, -3) + '.' + String(car.pret).slice(-3) : car.pret
@@ -23,7 +25,7 @@ function Car(car) {
                 onHoverEnd={() => setShowInfo(false)}
             >
                 <motion.div key={car.link}
-                    onClick={() => { setSelectedImg(car.link) }}
+                    onClick={() => { dispatch(setSelectedImg(car.link)) }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}>
