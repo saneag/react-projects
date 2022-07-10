@@ -2,14 +2,13 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { setPage } from '../../redux/slices/sortSlice'
 import ReactPagination from 'react-responsive-pagination'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './styles.module.scss'
 
 function Pagination() {
     const dispatch = useDispatch()
     const page = useSelector(state => state.sort.page)
+
     return (
         <ReactPagination
             className={`${styles.root} pagination`}
