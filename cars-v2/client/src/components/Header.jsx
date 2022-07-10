@@ -14,7 +14,7 @@ function Header() {
     const theme = useSelector(state => state.changeTheme.theme)
 
     const toggleTheme = () => {
-        dispatch(setTheme(theme == 'dark' ? 'light' : 'dark'))
+        dispatch(setTheme(theme === 'dark' ? 'light' : 'dark'))
     }
 
     const navLinks = ['home', 'about', 'contact']
