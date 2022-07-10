@@ -14,7 +14,7 @@ function Pagination({ onChangePage }) {
             breakLabel={'...'}
             pageRangeDisplayed={12}
             pageCount={8}
-            onPageChange={(e) => {onChangePage(e.selected + 1); window.scrollTo(0, 0)}}
+            onPageChange={(e) => { onChangePage(e.selected + 1); window.scrollTo(0, 0) }}
         />
     )
 }
