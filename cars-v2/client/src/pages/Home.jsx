@@ -1,7 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { useSelector, useDispatch } from 'react-redux'
-import { setPage } from '../redux/slices/sortSlice'
+import { useSelector } from 'react-redux'
 
 import Cars from '../components/Cars'
 import Search from '../components/Search'
@@ -11,7 +10,6 @@ import Pagination from '../components/Pagination'
 import Skeleton from '../components/Skeleton'
 
 function Home() {
-    const dispatch = useDispatch()
     const { sortBy, sortOrder, page } = useSelector(state => state.sort)
     const search = useSelector(state => state.search.search)
     const selectedImg = useSelector(state => state.showModalCar.selectedImg)
@@ -57,7 +55,7 @@ function Home() {
                     <Modal cars={cars} />
                 )
             }
-            <Pagination onChangePage={number => dispatch(setPage(number))} />
+            <Pagination />
             <div className='showMore'>
                 {
                     showReadMore && page === 1 &&
