@@ -15,6 +15,9 @@ export const useRoutes = isAuthenticated => {
     if (isAuthenticated) {
         return (
             <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
                 <Route path="/add_car" element={<AddCar />} />
                 <Route path="/edit_car" element={<EditCar />} />
                 <Route path='*' element={<Error />} />
