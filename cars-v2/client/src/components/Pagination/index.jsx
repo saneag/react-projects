@@ -1,20 +1,23 @@
 import React from 'react'
-import ReactPaginate from 'react-paginate'
+import { useSelector, useDispatch } from 'react-redux'
+import { setPage } from '../../redux/slices/sortSlice'
+import ReactPagination from 'react-responsive-pagination'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import styles from './styles.module.scss'
 
-function Pagination({ onChangePage }) {
+function Pagination() {
+    const dispatch = useDispatch()
+    const page = useSelector(state => state.sort.page)
     return (
-        <ReactPaginate
+        <ReactPagination
             className={`${styles.root} pagination`}
-            previousLabel={<FontAwesomeIcon icon={faArrowLeft} />}
-            nextLabel={<FontAwesomeIcon icon={faArrowRight} />}
-            breakLabel={'...'}
-            pageRangeDisplayed={12}
-            pageCount={8}
-            onPageChange={(e) => { onChangePage(e.selected + 1); window.scrollTo(0, 0) }}
+            current={page}
+            total={8}
+            onPageChange={(currentPage) => { dispatch(setPage(currentPage)); window.scrollTo(0, 0) }}
+            previousLabel={'←'}
+            nextLabel={'→'}
         />
     )
 }
