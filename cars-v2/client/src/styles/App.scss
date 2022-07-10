@@ -45,10 +45,15 @@ html {
 }
 
 #dark {
-    background-color: #272c35;
+    background-color: $primary-color;
 
     #tc_img {
         transform: rotate(0deg);
+    }
+
+    .search_icon,
+    .delete_icon {
+        color: $primary-color;
     }
 }
 
@@ -59,25 +64,20 @@ html {
         transform: rotate(180deg);
     }
 
-    header {
-        background: rgba(120, 120, 120, 0.4);
+    .search_input {
+        background-color: $primary-color;
+        caret-color: $yellow;
+        color: white;
     }
 
-    .sign_up:hover {
-        background-color: #f19f32;
-        border: 1px solid transparent;
-    }
-
-    .cars_gallery {
-        p {
-            color: #272c35;
-        }
+    .sort_title {
+        color: $primary-color;
     }
 
     .pagination {
         li {
             a {
-                color: #272c35;
+                color: $primary-color;
 
                 &:hover {
                     border: 2px solid #FFA7A9;
@@ -86,9 +86,13 @@ html {
         }
     }
 
-    footer {
+    .cars_gallery,
+    footer,
+    #alex,
+    #danu,
+    #ion {
         p {
-            color: #272c35;
+            color: $primary-color;
         }
     }
 }

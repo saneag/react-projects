@@ -1,45 +1,48 @@
 import React from 'react'
 import { motion } from 'framer-motion'
-import imageCompression from 'browser-image-compression'
+// import imageCompression from 'browser-image-compression'
+// import { handleImageUpload } from '../../utils/compress_images'
 import { ShowModalCar } from '../../pages/Home'
 
 import styles from './styles.module.scss'
 
 function Car(car) {
     const { setSelectedImg } = React.useContext(ShowModalCar)
+    const [showInfo, setShowInfo] = React.useState(false)
 
-    //image compression
-    // async function handleImageUpload(event) {
-
-    //     const imageFile = event.target.files[0];
-    //     console.log('originalFile instanceof Blob', imageFile instanceof Blob); // true
-    //     console.log(`originalFile size ${imageFile.size / 1024 / 1024} MB`);
-
-    //     const options = {
-    //         maxSizeMB: 1,
-    //         maxWidthOrHeight: 1920,
-    //         useWebWorker: true
-    //     }
-    //     try {
-    //         const compressedFile = await imageCompression(imageFile, options);
-    //         console.log('compressedFile instanceof Blob', compressedFile instanceof Blob); // true
-    //         console.log(`compressedFile size ${compressedFile.size / 1024 / 1024} MB`); // smaller than maxSizeMB
-    //     } catch (error) {
-    //         console.log(error);
-    //     }
-    // }
+    let price = String(car.pret).length > 3 ? String(car.pret).slice(0, -3) + '.' + String(car.pret).slice(-3) : car.pret
+    price = price.length > 7 ? price.slice(0, -7) + '.' + price.slice(-7) : price
 
     return (
         <div className={styles.root}>
-            <motion.div key={car.link}
-                onClick={() => { setSelectedImg(car.link) }}
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 1 }}
+            <motion.div
+                whileHover={{
+                    scale: 1.1,
+                }}
+                onHoverStart={() => setShowInfo(true)}
+                onHoverEnd={() => setShowInfo(false)}
             >
-                <motion.img src={car.link} className={styles.image}
-                    animate={{ opacity: 1 }}></motion.img>
-                <p>{car.marca} <span className={styles.model}>{car.model}</span></p>
+                <motion.div key={car.link}
+                    onClick={() => { setSelectedImg(car.link) }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}>
+                    <div>
+                        <motion.img src={car.link} className={styles.image}
+                            animate={{ opacity: 1 }}></motion.img>
+                        {showInfo && <div className={styles.info}>
+                            <motion.div
+                                initial={{ opacity: 0 }}
+                                animate={{ opacity: 1 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <span>Anul: <span className={styles.year}>{car.an}</span></span>
+                                <span> Pretul: <span className={styles.cash}>$ {price}</span></span>
+                            </motion.div>
+                        </div>}
+                    </div>
+                    <p>{car.marca} <span className={styles.model}>{car.model}</span></p>
+                </motion.div>
             </motion.div>
         </div>
         // <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e)} />

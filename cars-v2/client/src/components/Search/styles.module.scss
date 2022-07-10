@@ -1,0 +1,41 @@
+.search_input {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+
+    div {
+        position: relative;
+
+        input {
+            width: 300px;
+            height: 40px;
+            border-radius: 5px;
+            padding: 0 35px;
+            font-size: 16px;
+            font-family: 'Open Sans', sans-serif;
+            transition: all 0.3s ease-in-out;
+
+            &:focus {
+                width: 400px;
+            }
+        }
+
+        .seach_icon,
+        .delete_icon {
+            position: absolute;
+            color: white;
+            top: 10px;
+            margin-left: 10px;
+            font-size: 18px;
+        }
+
+        .delete_icon {
+            padding: 10px;
+            top: 0;
+            right: 0;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    }
+}

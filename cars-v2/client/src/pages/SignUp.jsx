@@ -1,7 +1,6 @@
 import React from 'react'
 
 function SignUp() {
-    const [checked, setChecked] = React.useState(false);
     return (
         <div className='sign_in_page sign_up_page'>
             <div className='form'>
