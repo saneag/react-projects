@@ -1,5 +1,7 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import axios from 'axios'
+import { useSelector, useDispatch } from 'react-redux'
+import { setPage } from '../redux/slices/sortSlice'
 
 import Cars from '../components/Cars'
 import Search from '../components/Search'
@@ -9,29 +11,26 @@ import Pagination from '../components/Pagination'
 import Skeleton from '../components/Skeleton'
 
 function Home() {
-    console.log('updated')
-    const sortBy = useSelector(state => state.sort.sortBy)
-    const sortOrder = useSelector(state => state.sort.sortOrder)
+    const dispatch = useDispatch()
+    const { sortBy, sortOrder, page } = useSelector(state => state.sort)
     const search = useSelector(state => state.search.search)
     const selectedImg = useSelector(state => state.showModalCar.selectedImg)
 
     const [cars, setCars] = React.useState([])
     const [loading, setLoading] = React.useState(true)
-    const [page, setPage] = React.useState(1)
     const [carsLimit, setCarsLimit] = React.useState(12)
     const [showReadMore, setShowReadMore] = React.useState(true)
 
     React.useEffect(() => {
         setLoading(true)
-        fetch(`https://62a36f1d21232ff9b21fe3d5.mockapi.io/cars?sortBy=${sortBy}&order=${sortOrder ? 'desc' : 'asc'}&&page=${page}&limit=${carsLimit}&search=${search}`)
-            .then(res => res.json())
-            .then(data => {
+        axios.get(`https://62a36f1d21232ff9b21fe3d5.mockapi.io/cars?sortBy=${sortBy}&order=${sortOrder ? 'desc' : 'asc'}&&page=${page}&limit=${carsLimit}&search=${search}`)
+            .then(res => {
                 setLoading(false)
-                setCars(data)
+                setCars(res.data)
                 if (page !== 1) {
                     setCarsLimit(12)
                 }
-                setShowReadMore(carsLimit > data.length ? false : true)
+                setShowReadMore(carsLimit > res.data.length ? false : true)
             })
     }, [page, carsLimit, search, sortBy, sortOrder])
 
@@ -58,7 +57,7 @@ function Home() {
                     <Modal cars={cars} />
                 )
             }
-            <Pagination onChangePage={number => setPage(number)} />
+            <Pagination onChangePage={number => dispatch(setPage(number))} />
             <div className='showMore'>
                 {
                     showReadMore && page === 1 &&
