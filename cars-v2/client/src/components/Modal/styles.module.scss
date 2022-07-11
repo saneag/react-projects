@@ -69,6 +69,10 @@
             font-size: 1.2em;
         }
 
+        @media screen and (orientation: landscape) {
+            font-size: 1.1em;
+        }
+
         span {
             font-weight: bold;
             font-style: normal;

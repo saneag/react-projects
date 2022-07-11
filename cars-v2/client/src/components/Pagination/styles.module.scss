@@ -34,5 +34,10 @@
             font-weight: bold;
             border: 2px solid gray;
         }
+
+        .active {
+            position: relative;
+            bottom: 5px
+        }
     }
 }

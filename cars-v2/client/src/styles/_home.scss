@@ -2,8 +2,16 @@ main {
     padding-top: 100px;
 
     .top_options {
+        width: 90%;
+        margin: 0 auto;
         display: flex;
         justify-content: center;
+
+        @media screen and (max-width: 700px) {
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
     }
 
     .cars_gallery {
@@ -26,6 +34,7 @@ main {
             background-color: #000;
             color: #fff;
             transition: 0.2s;
+            margin-bottom: 20px;
 
             &:hover {
                 background-color: #444;
@@ -37,7 +46,7 @@ main {
 footer {
     width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     padding-bottom: 10px;
 
     p {

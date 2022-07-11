@@ -8,6 +8,7 @@ import NavBarLink from './NavBarLink'
 import themeIcon from '../assets/color_change.webp'
 import SignIn from '../pages/SignIn'
 import SignUp from '../pages/SignUp'
+import BurgerMenu from '../components/BurgerMenu'
 
 function Header() {
     const dispatch = useDispatch()
@@ -19,7 +20,7 @@ function Header() {
 
     const navLinks = ['home', 'about', 'contact']
 
-    const [isVisibleBtn, setIsVisibleBtn] = React.useState(false)
+    const [isVisible, setIsVisible] = React.useState(false)
 
     return (
         <header>
@@ -36,14 +37,18 @@ function Header() {
                     <Link to="/signin" element={<SignIn />} className='sign_in auth_btn'>Sign in</Link>
                     <Link to="/signup" element={<SignUp />} className='sign_up auth_btn'>Sign up</Link>
                 </div>
-                {
-                    isVisibleBtn && (
-                        <div id="burger_menu_btn">
-                            <span className='bar top'></span>
-                            <span className='bar middle'></span>
-                            <span className='bar bottom'></span>
-                        </div>
-                    )
+                <div id="menu_btn">
+                    <div id="burger_menu_btn" onClick={() => setIsVisible(!isVisible)}>
+                        <span className={`${isVisible ? 'change' : ''} bar top`}></span>
+                        <span className={`${isVisible ? 'change' : ''} bar middle`}></span>
+                        <span className={`${isVisible ? 'change' : ''} bar bottom`}></span>
+                    </div>
+                </div>
+                {isVisible &&
+                    <BurgerMenu
+                        isVisible={isVisible}
+                        setIsVisible={setIsVisible}
+                    />
                 }
             </nav>
         </header>
