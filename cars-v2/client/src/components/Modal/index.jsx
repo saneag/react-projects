@@ -22,12 +22,33 @@ function Modal({ cars }) {
     let price = String(car.pret).length > 3 ? String(car.pret).slice(0, -3) + '.' + String(car.pret).slice(-3) : car.pret
     price = price.length > 7 ? price.slice(0, -7) + '.' + price.slice(-7) : price
 
+
+    const [deviceType, setDeviceType] = React.useState("");
+
+    React.useEffect(() => {
+        if (
+            /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone/i.test(
+                navigator.userAgent
+            )
+        ) {
+            setDeviceType("Mobile");
+        } else {
+            setDeviceType("Desktop");
+        }
+    }, []);
+
+    const closeModal = e => {
+        if (deviceType != 'Mobile') {
+            e.stopPropagation()
+        }
+    }
+
     return (
         <motion.div className={styles.backdrop} onClick={handleClick}
             initial={{ opacity: 0, scale: 1 }}
             animate={{ opacity: 1 }}>
             <motion.div className={styles.modal_content}
-                onClick={e => e.stopPropagation()}
+                onClick={closeModal}
             >
                 <motion.img src={selectedImg}
                     initial={{ y: '-100vh' }}
