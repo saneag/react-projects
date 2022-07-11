@@ -1,14 +1,16 @@
 import React from 'react'
 
+import styles from './styles.module.scss'
+
 function Contact() {
     const [email, setEmail] = React.useState('')
     const [message, setMessage] = React.useState('')
 
     return (
-        <main>
-            <div className='contact_page'>
-                <div className='form'>
-                    <div className='input_field'>
+        <main className={styles.main}>
+            <div className={styles.contact_page}>
+                <div className={styles.form}>
+                    <div className={styles.input_field}>
                         <label htmlFor='email_input'>Email</label>
                         <input
                             placeholder='Enter Email'
@@ -18,9 +20,9 @@ function Contact() {
                             value={email}
                             onChange={e => setEmail(e.target.value)}
                         />
-                        <span className='border'></span>
                     </div>
-                    <div className='input_field'>
+                    <div className={styles.input_field}>
+                        <label htmlFor='message_input'>Message</label>
                         <textarea
                             placeholder='Enter Message'
                             id='message_input'
@@ -31,7 +33,7 @@ function Contact() {
                         />
                     </div>
                     <button
-                        className='sign_in_btn'
+                        className={styles.send_btn}
                         onClick={() => { }}
                     >
                         Send
