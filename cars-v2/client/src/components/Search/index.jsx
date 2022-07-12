@@ -14,12 +14,16 @@ function Search() {
 
     const inputRef = React.useRef()
 
-    const updateSearchValue = debounce(value => dispatch(setSearch(value)), 400)
-
     const onChangeInput = event => {
         setSearchValue(event.target.value)
         updateSearchValue(event.target.value)
     }
+
+    const updateSearchValue = React.useCallback(
+        debounce(value => {
+            dispatch(setSearch(value))
+        }, 400), []
+    )
 
     const onClear = () => {
         setSearchValue('')
