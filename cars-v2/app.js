@@ -2,13 +2,16 @@ import express from 'express'
 import config from 'config'
 import mongoose from 'mongoose'
 import multer from 'multer'
+import cors from 'cors'
+
+// import cars from '../cars.json'
 
 import { createCarValidation, loginValidation, registerValidation } from './validations.js'
 import { UserController, CarsController } from './controllers/index.js'
 import { handleValidationErrors, checkAuth } from './utils/index.js'
 
 mongoose.connect(config.get('mongoURI'))
-    .then(() => {
+    .then((res) => {
         console.log('db ok')
     }).catch(err => {
         console.log(err)
@@ -28,6 +31,7 @@ const storage = multer.diskStorage({
 const upload = multer({ storage })
 
 app.use(express.json())
+app.use(cors())
 app.use('/uploads', express.static('uploads'))
 
 app.post('/auth/login', loginValidation, handleValidationErrors, UserController.login)
