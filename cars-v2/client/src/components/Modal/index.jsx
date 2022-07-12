@@ -13,19 +13,15 @@ function Modal({ cars }) {
     const selectedImg = useSelector(state => state.showModalCar.selectedImg)
     const showModal = useSelector(state => state.showModalCar.showModal)
 
-    const handleClick = React.useCallback(
-        () => {
-            dispatch(setShowModal(!showModal))
-            if (selectedImg) {
-                dispatch(setSelectedImg(null))
-            }
-        }, [dispatch, showModal, selectedImg]
-    )
+    const handleClick = () => {
+        dispatch(setShowModal(!showModal))
+        if (selectedImg) {
+            dispatch(setSelectedImg(null))
+        }
+    }
     const car = React.useMemo(() => cars.find(car => car.link === selectedImg), [cars, selectedImg])
 
-    const price = React.useCallback(
-        (value) => convertPrice(value), []
-    )
+    const price = (value) => convertPrice(value)
 
     const [deviceType, setDeviceType] = React.useState("");
 
@@ -41,13 +37,11 @@ function Modal({ cars }) {
         }
     }, []);
 
-    const closeModal = React.useCallback(
-        e => {
-            if (deviceType !== 'Mobile') {
-                e.stopPropagation()
-            }
-        }, [deviceType]
-    )
+    const closeModal = e => {
+        if (deviceType !== 'Mobile') {
+            e.stopPropagation()
+        }
+    }
 
     return (
         <motion.div className={styles.backdrop} onClick={handleClick}

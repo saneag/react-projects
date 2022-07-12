@@ -16,20 +16,16 @@ function Search() {
 
     const updateSearchValue = debounce(value => dispatch(setSearch(value)), 400)
 
-    const onChangeInput = React.useCallback(
-        event => {
-            setSearchValue(event.target.value)
-            updateSearchValue(event.target.value)
-        }, [updateSearchValue]
-    )
+    const onChangeInput = event => {
+        setSearchValue(event.target.value)
+        updateSearchValue(event.target.value)
+    }
 
-    const onClear = React.useCallback(
-        () => {
-            setSearchValue('')
-            dispatch(setSearch(''))
-            inputRef.current.focus()
-        }, [dispatch, setSearchValue, inputRef]
-    )
+    const onClear = () => {
+        setSearchValue('')
+        dispatch(setSearch(''))
+        inputRef.current.focus()
+    }
 
     return (
         <div className={styles.search_input}>

@@ -14,9 +14,7 @@ function Car(car) {
     const dispatch = useDispatch()
     const [showInfo, setShowInfo] = React.useState(false)
 
-    const price = React.useCallback(
-        (value) => convertPrice(value), []
-    )
+    const price = (value) => convertPrice(value)
 
     return (
         <div className={styles.root}>

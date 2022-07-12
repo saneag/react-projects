@@ -14,11 +14,9 @@ function Header() {
     const dispatch = useDispatch()
     const theme = useSelector(state => state.changeTheme.theme)
 
-    const toggleTheme = React.useCallback(
-        () => {
-            dispatch(setTheme(theme === 'dark' ? 'light' : 'dark'))
-        }, [dispatch, theme]
-    )
+    const toggleTheme = () => {
+        dispatch(setTheme(theme === 'dark' ? 'light' : 'dark'))
+    }
 
     const navLinks = React.useMemo(() => ['home', 'about', 'contact'], [])
 

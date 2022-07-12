@@ -18,19 +18,15 @@ function Sort_Cars() {
 
     const sortMethods = React.useMemo(() => ['marca', 'an', 'putere', 'pret'], [])
 
-    const handleClick = React.useCallback(
-        (method) => {
-            setShowDropDown(!showDropDown)
-            dispatch(setSortBy(method))
-        }, [dispatch, showDropDown]
-    )
+    const handleClick = (method) => {
+        setShowDropDown(!showDropDown)
+        dispatch(setSortBy(method))
+    }
 
-    const handleChange = React.useCallback(
-        (e) => {
-            e.stopPropagation()
-            dispatch(setSortOrder(!sortOrder))
-        }, [dispatch, sortOrder]
-    )
+    const handleChange = (e) => {
+        e.stopPropagation()
+        dispatch(setSortOrder(!sortOrder))
+    }
 
     return (
         <div className={styles.sort_div}>
