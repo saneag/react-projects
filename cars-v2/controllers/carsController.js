@@ -40,11 +40,11 @@ export const setCar = async (req, res) => {
             brand: req.body.brand,
             model: req.body.model,
             year: req.body.year,
-            fuelType: req.body.fuelType,
-            engineCapacity: req.body.engineCapacity,
-            enginePower: req.body.enginePower,
-            tractionType: req.body.tractionType,
-            gearboxType: req.body.gearboxType,
+            fuel_type: req.body.fuel_type,
+            engine_capacity: req.body.engine_capacity,
+            engine_power: req.body.engine_power,
+            traction_type: req.body.traction_type,
+            gearbox_type: req.body.gearbox_type,
             price: req.body.price,
             imageUrl: req.body.imageUrl
         })
