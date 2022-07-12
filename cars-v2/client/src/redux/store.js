@@ -4,6 +4,7 @@ import changeTheme from './slices/changeThemeSlice'
 import search from './slices/searchSlice'
 import showModalCar from './slices/showModalCarSlice'
 import userAuth from './slices/userAuthSlice'
+import carSlice from './slices/carSlice'
 
 export const store = configureStore({
     reducer: {
@@ -12,5 +13,6 @@ export const store = configureStore({
         search,
         showModalCar,
         userAuth,
+        carSlice,
     },
 })
