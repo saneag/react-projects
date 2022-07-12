@@ -19,7 +19,7 @@ function Modal({ cars }) {
             dispatch(setSelectedImg(null))
         }
     }
-    const car = React.useMemo(() => cars.find(car => car.link === selectedImg), [cars, selectedImg])
+    const car = React.useMemo(() => cars.find(car => car.imageUrl === selectedImg), [cars, selectedImg])
 
     const price = (value) => convertPrice(value)
 
@@ -59,15 +59,15 @@ function Modal({ cars }) {
                     <div>
                         {
                             Object.keys(car).map((key, index) =>
-                                index !== 9 ? <p key={key}><span>{key} :</span></p> : '')
+                                index !== 0 && index !== 10 && index !== 11 ? <p key={key}><span>{key.replace(/_/, ' ')} :</span></p> : '')
                         }
                     </div>
                     <div>
                         {
                             Object.values(car).map((value, index) =>
-                                index !== 9 ? <p key={value}>
-                                    {index === 8 ? `$ ${price(car.pret)}` : value}
-                                    {index === 4 ? ' ml' : index === 5 ? ' hp' : ''}
+                                index !== 0 && index !== 10 && index !== 11 ? <p key={value}>
+                                    {index === 9 ? `$ ${price(car.price)}` : value}
+                                    {index === 5 ? ' ml' : index === 6 ? ' hp' : ''}
                                 </p> : '')
                         }
                     </div>
