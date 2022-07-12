@@ -8,7 +8,6 @@ import Footer from './components/Footer'
 
 import './styles/App.scss'
 
-
 function App() {
   const theme = useSelector(state => state.changeTheme.theme)
 
