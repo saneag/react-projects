@@ -1,7 +1,13 @@
 import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEye } from '@fortawesome/free-solid-svg-icons'
 
 function SignIn() {
-    const [checked, setChecked] = React.useState(false);
+    const [email, setEmail] = React.useState('')
+    const [password, setPassword] = React.useState('')
+    const [stayLogged, setStayLogged] = React.useState(false)
+    const [passwordVisibility, setPasswordVisibility] = React.useState(false)
+
     return (
         <div className='sign_in_page'>
             <div className='form'>
@@ -12,6 +18,8 @@ function SignIn() {
                         id='email_input'
                         type='text'
                         maxLength='20'
+                        value={email}
+                        onChange={e => setEmail(e.target.value)}
                     />
                     <span className='border'></span>
                 </div>
@@ -20,8 +28,14 @@ function SignIn() {
                     <input
                         placeholder='Enter Password'
                         id='pass_input'
-                        type='password'
+                        type={passwordVisibility ? 'text' : 'password'}
                         maxLength='20'
+                        value={password}
+                        onChange={e => setPassword(e.target.value)}
+                    />
+                    <FontAwesomeIcon icon={faEye}
+                        className='show_pass'
+                        onClick={() => setPasswordVisibility(!passwordVisibility)}
                     />
                     <span className='border'></span>
                 </div>
@@ -30,15 +44,20 @@ function SignIn() {
                         <input
                             id='checkbox_input'
                             type='checkbox'
-                            defaultChecked={checked}
-                            onClick={() => { setChecked(!checked) }}
+                            defaultChecked={stayLogged}
+                            onClick={() => setStayLogged(!stayLogged)}
                         />
                         <label htmlFor='checkbox_input'>Stay logged in</label>
                     </div>
                 </div>
-                <button className='sign_in_btn'>Sign in</button>
+                <button
+                    className='sign_in_btn'
+                    onClick={() => { }}
+                >
+                    Sign in
+                </button>
             </div>
-        </div>
+        </div >
     )
 }
 

@@ -1,9 +1,16 @@
 import { configureStore } from '@reduxjs/toolkit'
 import sort from './slices/sortSlice'
-import searchSlice from './slices/searchSlice'
+import changeTheme from './slices/changeThemeSlice'
+import search from './slices/searchSlice'
+import showModalCar from './slices/showModalCarSlice'
+import userAuth from './slices/userAuthSlice'
 
 export const store = configureStore({
     reducer: {
         sort,
+        changeTheme,
+        search,
+        showModalCar,
+        userAuth,
     },
 })

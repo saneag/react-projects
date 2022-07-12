@@ -1,6 +1,8 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+import { setSortBy, setSortOrder } from '../../redux/slices/sortSlice'
+
 import { motion } from 'framer-motion';
-import { SortCarsContext, SortOrderContext } from '../../pages/Home'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowDown, faArrowUp } from '@fortawesome/free-solid-svg-icons'
 
@@ -8,20 +10,22 @@ import styles from './styles.module.scss'
 import SortDropdown from '../SortDropdown';
 
 function Sort_Cars() {
-    const { sortCars, setSortCars } = React.useContext(SortCarsContext)
-    const { sortOrder, setSortOrder } = React.useContext(SortOrderContext)
     const [showDropDown, setShowDropDown] = React.useState(false)
 
-    const sortMethods = ['marca', 'an', 'putere', 'pret']
+    const sortBy = useSelector(state => state.sort.sortBy)
+    const sortOrder = useSelector(state => state.sort.sortOrder)
+    const dispatch = useDispatch();
+
+    const sortMethods = React.useMemo(() => ['marca', 'an', 'putere', 'pret'], [])
 
     const handleClick = (method) => {
         setShowDropDown(!showDropDown)
-        setSortCars(method)
+        dispatch(setSortBy(method))
     }
 
     const handleChange = (e) => {
         e.stopPropagation()
-        setSortOrder(!sortOrder)
+        dispatch(setSortOrder(!sortOrder))
     }
 
     return (
@@ -30,7 +34,7 @@ function Sort_Cars() {
                 <motion.div
                     className={`sort_title ${styles.sort_title}`}
                     onClick={() => setShowDropDown(!showDropDown)}>
-                    Sort by: {sortCars}
+                    Sort by: {sortBy}
                     <FontAwesomeIcon icon={sortOrder ? faArrowDown : faArrowUp}
                         className={styles.sort_arrow}
                         onClick={e => handleChange(e)} />
@@ -41,4 +45,4 @@ function Sort_Cars() {
     )
 }
 
-export default Sort_Cars
+export default React.memo(Sort_Cars)
