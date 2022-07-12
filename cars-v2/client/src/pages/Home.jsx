@@ -1,40 +1,31 @@
 import React from 'react'
-import axios from 'axios'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { Cars, Modal, Pagination, Search, Sort, Skeleton } from '../components/index.js'
+import { setCars, setCarsLimit, setShowReadMore, setLoading } from '../redux/slices/carSlice'
 
-import Cars from '../components/Cars'
-import Search from '../components/Search'
-import Sort from '../components/Sort'
-import Modal from '../components/Modal'
-import Pagination from '../components/Pagination'
-import Skeleton from '../components/Skeleton'
+import axios from '../utils/axios'
 
 function Home() {
+    const dispatch = useDispatch()
     const { sortBy, sortOrder, page } = useSelector(state => state.sort)
     const search = useSelector(state => state.search.search)
     const selectedImg = useSelector(state => state.showModalCar.selectedImg)
-
-    const [cars, setCars] = React.useState([])
-    const [loading, setLoading] = React.useState(true)
-    const [carsLimit, setCarsLimit] = React.useState(12)
-    const [showReadMore, setShowReadMore] = React.useState(true)
+    const { cars, carsLimit, showReadMore, loading } = useSelector(state => state.carSlice)
 
     React.useEffect(() => {
-        setLoading(true)
-        axios.get(`https://62a36f1d21232ff9b21fe3d5.mockapi.io/cars?sortBy=${sortBy}&order=${sortOrder ? 'desc' : 'asc'}&&page=${page}&limit=${carsLimit}&search=${search}`)
+        dispatch(setLoading(true))
+        axios.get('/cars')
             .then(res => {
-                setLoading(false)
-                setCars(res.data)
-                if (page !== 1) {
-                    setCarsLimit(12)
-                }
-                setShowReadMore(carsLimit > res.data.length ? false : true)
+                dispatch(setCars(res.data))
+                if (page !== 1) dispatch(setCarsLimit(carsLimit + 12))
+                dispatch(setLoading(false))
+                dispatch(setShowReadMore(carsLimit > res.data.length ? false : true))
             })
-    }, [page, carsLimit, search, sortBy, sortOrder])
+    }, [page, carsLimit, search, sortBy, sortOrder, dispatch])
 
     const showMoreCars = () => {
         if (carsLimit <= cars.length) {
-            setCarsLimit(carsLimit + 12)
+            dispatch(setCarsLimit(carsLimit + 12))
         }
     }
 
@@ -47,7 +38,7 @@ function Home() {
             <div className="cars_gallery">
                 {
                     loading ? [...Array(carsLimit)].map((_, index) => <Skeleton key={index} />) :
-                        cars.map(car => <Cars key={car.marca + car.model + car.pret} {...car} />)
+                        cars.map(car => <Cars key={car.brand + car.model + car.price} {...car} />)
                 }
             </div>
             {
