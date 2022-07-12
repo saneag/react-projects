@@ -13,23 +13,23 @@ const CarsSchema = new mongoose.Schema({
         type: Number,
         required: true,
     },
-    fuelType: {
+    fuel_type: {
         type: String,
         required: true,
     },
-    engineCapacity: {
+    engine_capacity: {
         type: Number,
         required: true,
     },
-    enginePower: {
+    engine_power: {
         type: Number,
         required: true,
     },
-    tractionType: {
+    traction_type: {
         type: String,
         required: true,
     },
-    gearboxType: {
+    gearbox_type: {
         type: String,
         required: true,
     },
