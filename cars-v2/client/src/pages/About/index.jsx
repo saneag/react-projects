@@ -12,40 +12,42 @@ import find_age from '../../utils/find_age.js'
 import styles from './styles.module.scss'
 
 function About() {
-    const colabs = {
-        alex: {
-            name: 'alex',
-            image: sanea,
-            description: `Eu-s Alex. Am ${find_age('2002/06/27')} ani, traiesc in Moldova. Doresc sa devin un fullstack
+    const colabs = React.useMemo(() =>
+        [{
+            alex: {
+                name: 'alex',
+                image: sanea,
+                description: `Eu-s Alex. Am ${find_age('2002/06/27')} ani, traiesc in Moldova. Doresc sa devin un fullstack
             developer bun in viitor. Asa cum traiesc in Moldova stiu 3 limbi: Romana, Rusa, Engleza. Fac
             site-uri din 2018.`,
-            links_social: {
-                facebook: 'https://www.facebook.com/garsteaa/',
-                instagram: 'https://www.instagram.com/garstea_a/'
-            }
-        },
-        ion: {
-            name: 'ion',
-            image: ion,
-            description: `Sunt Ionel, am ${find_age('2000/12/26')} ani, imi plac calculatoarele si sunt pasionat de masini. Imi
+                links_social: {
+                    facebook: 'https://www.facebook.com/garsteaa/',
+                    instagram: 'https://www.instagram.com/garstea_a/'
+                }
+            },
+            ion: {
+                name: 'ion',
+                image: ion,
+                description: `Sunt Ionel, am ${find_age('2000/12/26')} ani, imi plac calculatoarele si sunt pasionat de masini. Imi
         place sa programez si hobby-urile mele sunt: serialele, muzica, jocuri video si jocuri de masa.`,
-            links_social: {
-                facebook: 'https://www.facebook.com/iontuc',
-                instagram: 'https://www.instagram.com/ioneltuc/'
-            }
-        },
-        danu: {
-            name: 'danu',
-            image: danu,
-            description: `Eu sunt Danut, am ${find_age('2001/06/19')} ani, pasionat de calculatoare, în special de jocuri video.
+                links_social: {
+                    facebook: 'https://www.facebook.com/iontuc',
+                    instagram: 'https://www.instagram.com/ioneltuc/'
+                }
+            },
+            danu: {
+                name: 'danu',
+                image: danu,
+                description: `Eu sunt Danut, am ${find_age('2001/06/19')} ani, pasionat de calculatoare, în special de jocuri video.
         Ma hranesc cu nervii oamenilor iar o zi fara un om enervat, pentru mine e o zi pierduta. Din pacate,
         imi place sa vorbesc mult, ceea ce uneori este un minus o.O`,
-            links_social: {
-                facebook: 'https://www.facebook.com/raileanu.daniel19/',
-                instagram: 'https://www.instagram.com/raileanu.d19/'
+                links_social: {
+                    facebook: 'https://www.facebook.com/raileanu.daniel19/',
+                    instagram: 'https://www.instagram.com/raileanu.d19/'
+                }
             }
-        }
-    }
+        }]
+    )
 
     return (
         <main>
@@ -55,9 +57,9 @@ function About() {
                 transition={{ duration: 1 }}
             >
                 <div className={styles.gallery}>
-                    <People {...colabs.alex} />
-                    <People {...colabs.ion} />
-                    <People {...colabs.danu} />
+                    <People {...colabs[0].alex} />
+                    <People {...colabs[0].ion} />
+                    <People {...colabs[0].danu} />
                 </div>
             </motion.div>
         </main>

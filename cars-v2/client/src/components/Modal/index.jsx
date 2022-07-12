@@ -4,6 +4,8 @@ import { setShowModal, setSelectedImg } from '../../redux/slices/showModalCarSli
 
 import { motion } from 'framer-motion'
 
+import convertPrice from '../../utils/convertPrice'
+
 import styles from './styles.module.scss'
 
 function Modal({ cars }) {
@@ -11,17 +13,19 @@ function Modal({ cars }) {
     const selectedImg = useSelector(state => state.showModalCar.selectedImg)
     const showModal = useSelector(state => state.showModalCar.showModal)
 
-    const handleClick = () => {
-        dispatch(setShowModal(!showModal))
-        if (selectedImg) {
-            dispatch(setSelectedImg(null))
+    const handleClick = React.useCallback(
+        () => {
+            dispatch(setShowModal(!showModal))
+            if (selectedImg) {
+                dispatch(setSelectedImg(null))
+            }
         }
-    }
-    const car = cars.find(car => car.link === selectedImg)
+    )
+    const car = React.useMemo(() => cars.find(car => car.link === selectedImg), [cars, selectedImg])
 
-    let price = String(car.pret).length > 3 ? String(car.pret).slice(0, -3) + '.' + String(car.pret).slice(-3) : car.pret
-    price = price.length > 7 ? price.slice(0, -7) + '.' + price.slice(-7) : price
-
+    const price = React.useCallback(
+        (value) => convertPrice(value)
+    )
 
     const [deviceType, setDeviceType] = React.useState("");
 
@@ -37,11 +41,13 @@ function Modal({ cars }) {
         }
     }, []);
 
-    const closeModal = e => {
-        if (deviceType != 'Mobile') {
-            e.stopPropagation()
+    const closeModal = React.useCallback(
+        e => {
+            if (deviceType != 'Mobile') {
+                e.stopPropagation()
+            }
         }
-    }
+    )
 
     return (
         <motion.div className={styles.backdrop} onClick={handleClick}
@@ -66,7 +72,7 @@ function Modal({ cars }) {
                         {
                             Object.values(car).map((value, index) =>
                                 index !== 9 ? <p key={value}>
-                                    {index === 8 ? `$ ${price}` : value}
+                                    {index === 8 ? `$ ${price(car.pret)}` : value}
                                     {index === 4 ? ' ml' : index === 5 ? ' hp' : ''}
                                 </p> : '')
                         }
@@ -77,4 +83,4 @@ function Modal({ cars }) {
     )
 }
 
-export default Modal
+export default React.memo(Modal)

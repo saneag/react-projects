@@ -29,4 +29,4 @@ function SortDropdown({ handleClick, sortMethods }) {
     )
 }
 
-export default SortDropdown
+export default React.memo(SortDropdown)

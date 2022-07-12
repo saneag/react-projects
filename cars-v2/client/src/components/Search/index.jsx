@@ -15,20 +15,24 @@ function Search() {
 
     const inputRef = React.useRef()
 
-    const onChangeInput = event => {
-        setSearchValue(event.target.value)
-        updateSearchValue(event.target.value)
-    }
+    const onChangeInput = React.useCallback(
+        event => {
+            setSearchValue(event.target.value)
+            updateSearchValue(event.target.value)
+        }
+    )
 
     const updateSearchValue = React.useCallback(
         debounce(value => dispatch(setSearch(value)), 400), [search]
     )
 
-    const onClear = () => {
-        setSearchValue('')
-        dispatch(setSearch(''))
-        inputRef.current.focus()
-    }
+    const onClear = React.useCallback(
+        () => {
+            setSearchValue('')
+            dispatch(setSearch(''))
+            inputRef.current.focus()
+        }
+    )
 
     return (
         <div className={styles.search_input}>
@@ -46,4 +50,4 @@ function Search() {
         </div>
     )
 }
-export default Search
+export default React.memo(Search)

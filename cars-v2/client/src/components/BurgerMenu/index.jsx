@@ -30,4 +30,4 @@ function BurgerMenu({ isVisible, setIsVisible }) {
     )
 }
 
-export default BurgerMenu
+export default React.memo(BurgerMenu)

@@ -6,14 +6,17 @@ import { motion } from 'framer-motion'
 // import imageCompression from 'browser-image-compression'
 // import { handleImageUpload } from '../../utils/compress_images'
 
+import convertPrice from '../../utils/convertPrice'
+
 import styles from './styles.module.scss'
 
 function Car(car) {
     const dispatch = useDispatch()
     const [showInfo, setShowInfo] = React.useState(false)
 
-    let price = String(car.pret).length > 3 ? String(car.pret).slice(0, -3) + '.' + String(car.pret).slice(-3) : car.pret
-    price = price.length > 7 ? price.slice(0, -7) + '.' + price.slice(-7) : price
+    const price = React.useCallback(
+        (value) => convertPrice(value)
+    )
 
     return (
         <div className={styles.root}>
@@ -39,7 +42,7 @@ function Car(car) {
                                 transition={{ duration: 0.2 }}
                             >
                                 <span>Anul: <span className={styles.year}>{car.an}</span></span>
-                                <span> Pretul: <span className={styles.cash}>$ {price}</span></span>
+                                <span> Pretul: <span className={styles.cash}>$ {price(car.pret)}</span></span>
                             </motion.div>
                         </div>}
                     </div>
@@ -51,4 +54,4 @@ function Car(car) {
     )
 }
 
-export default Car
+export default React.memo(Car)
