@@ -46,7 +46,7 @@ function About() {
                     instagram: 'https://www.instagram.com/raileanu.d19/'
                 }
             }
-        }]
+        }], []
     )
 
     return (

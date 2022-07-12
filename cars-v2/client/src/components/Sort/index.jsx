@@ -22,14 +22,14 @@ function Sort_Cars() {
         (method) => {
             setShowDropDown(!showDropDown)
             dispatch(setSortBy(method))
-        }
+        }, [dispatch, showDropDown]
     )
 
     const handleChange = React.useCallback(
         (e) => {
             e.stopPropagation()
             dispatch(setSortOrder(!sortOrder))
-        }
+        }, [dispatch, sortOrder]
     )
 
     return (

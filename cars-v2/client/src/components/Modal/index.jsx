@@ -19,12 +19,12 @@ function Modal({ cars }) {
             if (selectedImg) {
                 dispatch(setSelectedImg(null))
             }
-        }
+        }, [dispatch, showModal, selectedImg]
     )
     const car = React.useMemo(() => cars.find(car => car.link === selectedImg), [cars, selectedImg])
 
     const price = React.useCallback(
-        (value) => convertPrice(value)
+        (value) => convertPrice(value), []
     )
 
     const [deviceType, setDeviceType] = React.useState("");
@@ -43,10 +43,10 @@ function Modal({ cars }) {
 
     const closeModal = React.useCallback(
         e => {
-            if (deviceType != 'Mobile') {
+            if (deviceType !== 'Mobile') {
                 e.stopPropagation()
             }
-        }
+        }, [deviceType]
     )
 
     return (

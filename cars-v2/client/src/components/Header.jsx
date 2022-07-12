@@ -17,10 +17,10 @@ function Header() {
     const toggleTheme = React.useCallback(
         () => {
             dispatch(setTheme(theme === 'dark' ? 'light' : 'dark'))
-        }
+        }, [dispatch, theme]
     )
 
-    const navLinks = ['home', 'about', 'contact']
+    const navLinks = React.useMemo(() => ['home', 'about', 'contact'], [])
 
     const [isVisible, setIsVisible] = React.useState(false)
 

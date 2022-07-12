@@ -15,7 +15,7 @@ function Car(car) {
     const [showInfo, setShowInfo] = React.useState(false)
 
     const price = React.useCallback(
-        (value) => convertPrice(value)
+        (value) => convertPrice(value), []
     )
 
     return (
