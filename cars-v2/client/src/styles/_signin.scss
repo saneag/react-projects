@@ -40,6 +40,15 @@
                 background-color: transparent;
                 transition: all 0.3s ease;
 
+                &:-webkit-autofill,
+                &:-webkit-autofill:focus {
+                    transition: background-color 600000s 0s, color 600000s 0s;
+                }
+
+                &[data-autocompleted] {
+                    background-color: transparent !important;
+                }
+
                 &~.border {
                     position: absolute;
                     bottom: 0;
@@ -118,6 +127,13 @@
                 background-color: transparent;
                 border: 1px solid $yellow;
             }
+        }
+
+        .error_message {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            color: red;
         }
     }
 }
