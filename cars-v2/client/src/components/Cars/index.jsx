@@ -3,8 +3,6 @@ import { useDispatch } from 'react-redux'
 import { setSelectedImg } from '../../redux/slices/showModalCarSlice'
 
 import { motion } from 'framer-motion'
-// import imageCompression from 'browser-image-compression'
-// import { handleImageUpload } from '../../utils/compress_images'
 
 import convertPrice from '../../utils/convertPrice'
 
@@ -48,7 +46,6 @@ function Car(car) {
                 </motion.div>
             </motion.div>
         </div>
-        // <input type="file" accept="image/*" onChange={(e) => handleImageUpload(e)} />
     )
 }
 
