@@ -8,7 +8,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 80000,
-        "link": "https://www.cnet.com/a/img/S7CBWbpv2RVKuIs8_eqfsISDonM=/940x528/2018/03/01/fa14023f-2af4-4f5a-97a3-272fd55b8988/2018-alfa-romeo-stelvio-quadrifoglio-70.jpg"
+        "imageUrl": "https://www.cnet.com/a/img/S7CBWbpv2RVKuIs8_eqfsISDonM=/940x528/2018/03/01/fa14023f-2af4-4f5a-97a3-272fd55b8988/2018-alfa-romeo-stelvio-quadrifoglio-70.jpg"
     },
     {
         "brand": "Alfa Romeo",
@@ -20,7 +20,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 87000,
-        "link": "https://cdn.motor1.com/images/mgl/OQPyR/s1/2017-alfa-romeo-giulia-first-drive.jpg"
+        "imageUrl": "https://cdn.motor1.com/images/mgl/OQPyR/s1/2017-alfa-romeo-giulia-first-drive.jpg"
     },
     {
         "brand": "Audi",
@@ -32,7 +32,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Automata",
         "price": 36000,
-        "link": "https://s1.cdn.autoevolution.com/images/news/here-s-why-the-2009-audi-rs6-v10-isn-t-as-good-as-we-think-139660_1.jpg"
+        "imageUrl": "https://s1.cdn.autoevolution.com/images/news/here-s-why-the-2009-audi-rs6-v10-isn-t-as-good-as-we-think-139660_1.jpg"
     },
     {
         "brand": "Bmw",
@@ -44,7 +44,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 150000,
-        "link": "https://cdn.motor1.com/images/mgl/YRlAl/s1/bmw-i8-roadster-im-test.webp"
+        "imageUrl": "https://cdn.motor1.com/images/mgl/YRlAl/s1/bmw-i8-roadster-im-test.webp"
     },
     {
         "brand": "Nissan",
@@ -56,7 +56,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 8000,
-        "link": "https://i.pinimg.com/originals/00/b5/12/00b5128d4adc87a517b6f0eb6dcfc7f5.jpg"
+        "imageUrl": "https://i.pinimg.com/originals/00/b5/12/00b5128d4adc87a517b6f0eb6dcfc7f5.jpg"
     },
     {
         "brand": "Toyota",
@@ -68,7 +68,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 17000,
-        "link": "https://toprankglobal.jp/picture/vehicle/14247_6.jpg"
+        "imageUrl": "https://toprankglobal.jp/picture/vehicle/14247_6.jpg"
     },
     {
         "brand": "Chevrolet Corvette",
@@ -80,7 +80,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 80000,
-        "link": "https://cdn.motor1.com/images/mgl/MQbzw/s1/2020-chevy-corvette-stingray-coupe-most-expensive-version.jpg"
+        "imageUrl": "https://cdn.motor1.com/images/mgl/MQbzw/s1/2020-chevy-corvette-stingray-coupe-most-expensive-version.jpg"
     },
     {
         "brand": "Dodge",
@@ -92,7 +92,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 118000,
-        "link": "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/15q3/660572/2016-dodge-viper-acr-first-drive-review-car-and-driver-photo-660776-s-original.jpg?fill=2:1&resize=1200:*"
+        "imageUrl": "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/15q3/660572/2016-dodge-viper-acr-first-drive-review-car-and-driver-photo-660776-s-original.jpg?fill=2:1&resize=1200:*"
     },
     {
         "brand": "Dodge Challenger",
@@ -104,7 +104,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 81000,
-        "link": "https://media.ed.edmunds-media.com/dodge/challenger/2016/oem/2016_dodge_challenger_coupe_srt-hellcat_fq_oem_1_815.jpg"
+        "imageUrl": "https://media.ed.edmunds-media.com/dodge/challenger/2016/oem/2016_dodge_challenger_coupe_srt-hellcat_fq_oem_1_815.jpg"
     },
     {
         "brand": "Alfa Romeo",
@@ -116,7 +116,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 55000,
-        "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Festival_automobile_international_2014_-_Alfa_Romeo_4C_-_033.jpg/1200px-Festival_automobile_international_2014_-_Alfa_Romeo_4C_-_033.jpg"
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/Festival_automobile_international_2014_-_Alfa_Romeo_4C_-_033.jpg/1200px-Festival_automobile_international_2014_-_Alfa_Romeo_4C_-_033.jpg"
     },
     {
         "brand": "Subaru",
@@ -128,7 +128,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Manuala",
         "price": 10000,
-        "link": "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/d9b636c2ec84ddc3bc7f2eb32861b39bdd5f9683/photos/3OzoyGQR.Wj74IGmrf-(edit).jpg?t=162605384961"
+        "imageUrl": "https://media.carsandbids.com/cdn-cgi/image/width=2080,quality=70/d9b636c2ec84ddc3bc7f2eb32861b39bdd5f9683/photos/3OzoyGQR.Wj74IGmrf-(edit).jpg?t=162605384961"
     },
     {
         "brand": "Alfa Romeo",
@@ -140,7 +140,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 310000,
-        "link": "https://cdn.motor1.com/images/mgl/WxYZg/s1/alfa-romeo-8c-competizione.jpg"
+        "imageUrl": "https://cdn.motor1.com/images/mgl/WxYZg/s1/alfa-romeo-8c-competizione.jpg"
     },
     {
         "brand": "Bmw",
@@ -152,7 +152,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 25000,
-        "link": "https://www.auto-data.net/images/f126/BMW-5-Series-E60.jpg"
+        "imageUrl": "https://www.auto-data.net/images/f126/BMW-5-Series-E60.jpg"
     },
     {
         "brand": "Aston Martin",
@@ -164,7 +164,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 214000,
-        "link": "https://www.auto-data.net/images/f15/file9091816.jpg"
+        "imageUrl": "https://www.auto-data.net/images/f15/file9091816.jpg"
     },
     {
         "brand": "Bmw",
@@ -176,7 +176,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Manuala",
         "price": 1000000,
-        "link": "https://a.d-cd.net/bc99f44s-960.jpg"
+        "imageUrl": "https://a.d-cd.net/bc99f44s-960.jpg"
     },
     {
         "brand": "Aston Martin",
@@ -188,7 +188,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 2300000,
-        "link": "https://static.carthrottle.com/workspace/uploads/posts/2016/03/75edb3a9e43f9ee6d6a6b702d618ece6.jpg"
+        "imageUrl": "https://static.carthrottle.com/workspace/uploads/posts/2016/03/75edb3a9e43f9ee6d6a6b702d618ece6.jpg"
     },
     {
         "brand": "Aston Martin",
@@ -200,7 +200,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 385000,
-        "link": "https://www.carsflow.com/wp-content/uploads/2015/08/Aston-Martin-Vantage-GT12.jpg"
+        "imageUrl": "https://www.carsflow.com/wp-content/uploads/2015/08/Aston-Martin-Vantage-GT12.jpg"
     },
     {
         "brand": "Bmw",
@@ -212,7 +212,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 6000,
-        "link": "http://img.autoabc.lv/bmw-7-serija/bmw-7-serija_1998_Sedans_151027104512_4.jpg"
+        "imageUrl": "http://img.autoabc.lv/bmw-7-serija/bmw-7-serija_1998_Sedans_151027104512_4.jpg"
     },
     {
         "brand": "Aston Martin",
@@ -224,7 +224,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 3430000,
-        "link": "https://www.topcarrating.com/aston-martin/2015-aston-martin-db10-6.jpg"
+        "imageUrl": "https://www.topcarrating.com/aston-martin/2015-aston-martin-db10-6.jpg"
     },
     {
         "brand": "Toyota",
@@ -236,7 +236,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Automata",
         "price": 5000,
-        "link": "https://upload.wikimedia.org/wikipedia/commons/3/3a/05-08_Toyota_Corolla.jpg"
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3a/05-08_Toyota_Corolla.jpg"
     },
     {
         "brand": "Toyota",
@@ -248,7 +248,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Manuala",
         "price": 20000,
-        "link": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/Toyota-RAV4-GXL-2015-%282%29.jpg"
+        "imageUrl": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/Toyota-RAV4-GXL-2015-%282%29.jpg"
     },
     {
         "brand": "Audi",
@@ -260,7 +260,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 255000,
-        "link": "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/15q4/662479/2016-audi-r8-v10-plus-euro-spec-test-review-car-and-driver-photo-663404-s-original.jpg?fill=2:1&resize=1200:*"
+        "imageUrl": "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/15q4/662479/2016-audi-r8-v10-plus-euro-spec-test-review-car-and-driver-photo-663404-s-original.jpg?fill=2:1&resize=1200:*"
     },
     {
         "brand": "Volkswagen",
@@ -272,7 +272,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Manuala",
         "price": 7000,
-        "link": "https://www.automotiveaddicts.com/wp-content/uploads/2011/11/2011VWGolfTDIBeautyLeftWidesm001.jpg"
+        "imageUrl": "https://www.automotiveaddicts.com/wp-content/uploads/2011/11/2011VWGolfTDIBeautyLeftWidesm001.jpg"
     },
     {
         "brand": "Audi",
@@ -284,7 +284,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Manuala",
         "price": 23200,
-        "link": "https://images.drive.com.au/caradvice/image/private/c_fill,f_auto,g_auto,h_674,q_auto:eco,w_1200/428f8a9949db64f5fe0bf92c458c3299"
+        "imageUrl": "https://images.drive.com.au/caradvice/image/private/c_fill,f_auto,g_auto,h_674,q_auto:eco,w_1200/428f8a9949db64f5fe0bf92c458c3299"
     },
     {
         "brand": "Volkswagen",
@@ -296,7 +296,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Manuala",
         "price": 4300,
-        "link": "https://s.auto.drom.ru/i24231/r/photos/1397005/big_1430100.jpg"
+        "imageUrl": "https://s.auto.drom.ru/i24231/r/photos/1397005/big_1430100.jpg"
     },
     {
         "brand": "Audi",
@@ -308,7 +308,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 117700,
-        "link": "https://live.staticflickr.com/65535/50447165922_a9370aa37a_b.jpg"
+        "imageUrl": "https://live.staticflickr.com/65535/50447165922_a9370aa37a_b.jpg"
     },
     {
         "brand": "Audi",
@@ -320,7 +320,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 49000,
-        "link": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/audi-tt-s-2015-%286%29.jpg"
+        "imageUrl": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/audi-tt-s-2015-%286%29.jpg"
     },
     {
         "brand": "Bmw",
@@ -332,7 +332,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 229000,
-        "link": "https://bimmerlife.com/wp-content/uploads/2021/03/BMW-M3-GTR-Road-version-1-1-e1616983657640.jpg"
+        "imageUrl": "https://bimmerlife.com/wp-content/uploads/2021/03/BMW-M3-GTR-Road-version-1-1-e1616983657640.jpg"
     },
     {
         "brand": "Audi",
@@ -344,7 +344,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Manuala",
         "price": 18000,
-        "link": "https://www.topcarrating.com/audi/2005-audi-rs4-b7-8e.jpg"
+        "imageUrl": "https://www.topcarrating.com/audi/2005-audi-rs4-b7-8e.jpg"
     },
     {
         "brand": "Bmw",
@@ -356,7 +356,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 35000,
-        "link": "https://pictures.topspeed.com/IMG/crop/200611/1989-bmw-8-series-1_1600x0w.jpg"
+        "imageUrl": "https://pictures.topspeed.com/IMG/crop/200611/1989-bmw-8-series-1_1600x0w.jpg"
     },
     {
         "brand": "Audi",
@@ -368,7 +368,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Automata",
         "price": 32000,
-        "link": "https://auto.ironhorse.ru/wp-content/uploads/2009/11/audi-rs6-avant-2009.jpg"
+        "imageUrl": "https://auto.ironhorse.ru/wp-content/uploads/2009/11/audi-rs6-avant-2009.jpg"
     },
     {
         "brand": "Audi",
@@ -380,7 +380,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 61000,
-        "link": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/large-2018-audi-rs-5-coupe-3869-1560451982.jpg?crop=0.696xw:0.522xh;0.304xw,0.358xh&resize=1200:*"
+        "imageUrl": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/large-2018-audi-rs-5-coupe-3869-1560451982.jpg?crop=0.696xw:0.522xh;0.304xw,0.358xh&resize=1200:*"
     },
     {
         "brand": "Audi",
@@ -392,7 +392,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 135000,
-        "link": "https://avatars.mds.yandex.net/get-verba/1672712/2a0000016f9f8731518d7b5f8b208df63f8c/cattouch"
+        "imageUrl": "https://avatars.mds.yandex.net/get-verba/1672712/2a0000016f9f8731518d7b5f8b208df63f8c/cattouch"
     },
     {
         "brand": "Toyota",
@@ -404,7 +404,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Automata",
         "price": 27000,
-        "link": "https://media.ed.edmunds-media.com/toyota/corolla/2020/oem/2020_toyota_corolla_sedan_se_fq_oem_1_1280.jpg"
+        "imageUrl": "https://media.ed.edmunds-media.com/toyota/corolla/2020/oem/2020_toyota_corolla_sedan_se_fq_oem_1_1280.jpg"
     },
     {
         "brand": "Bmw",
@@ -416,7 +416,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 50000,
-        "link": "https://media.ed.edmunds-media.com/bmw/m2/2016/oem/2016_bmw_m2_coupe_base_fq_oem_1_815.jpg"
+        "imageUrl": "https://media.ed.edmunds-media.com/bmw/m2/2016/oem/2016_bmw_m2_coupe_base_fq_oem_1_815.jpg"
     },
     {
         "brand": "Ferrari",
@@ -428,7 +428,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 220000,
-        "link": "https://autotras.com/images/86/ferrari-ff-lease.jpg"
+        "imageUrl": "https://autotras.com/images/86/ferrari-ff-lease.jpg"
     },
     {
         "brand": "Bmw",
@@ -440,7 +440,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 134000,
-        "link": "https://editorial.pxcrush.net/carsales/general/editorial/BMW-M4-GTS-OL001.jpg?width=1024&height=683"
+        "imageUrl": "https://editorial.pxcrush.net/carsales/general/editorial/BMW-M4-GTS-OL001.jpg?width=1024&height=683"
     },
     {
         "brand": "Bmw",
@@ -452,7 +452,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 180000,
-        "link": "https://www.motortrend.com/uploads/sites/5/2021/07/2022_BMW_M8_Gran_Coupe_Competition-590-right-front-three-quarter.jpg?fit=around%7C875:492.1875"
+        "imageUrl": "https://www.motortrend.com/uploads/sites/5/2021/07/2022_BMW_M8_Gran_Coupe_Competition-590-right-front-three-quarter.jpg?fit=around%7C875:492.1875"
     },
     {
         "brand": "Mercedes",
@@ -464,7 +464,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 40000,
-        "link": "https://i2.wp.com/www.rolledlife.com/wp-content/uploads/2014/12/IMG_1183.jpg?fit=1920%2C1280&quality=95"
+        "imageUrl": "https://i2.wp.com/www.rolledlife.com/wp-content/uploads/2014/12/IMG_1183.jpg?fit=1920%2C1280&quality=95"
     },
     {
         "brand": "Mercedes",
@@ -476,7 +476,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 7000,
-        "link": "https://cdn.classicdigest.com/live/carimg/172401_172500/172434_cf78f25635688884.jpg"
+        "imageUrl": "https://cdn.classicdigest.com/live/carimg/172401_172500/172434_cf78f25635688884.jpg"
     },
     {
         "brand": "Audi",
@@ -488,7 +488,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 112000,
-        "link": "https://cdn.motor1.com/images/mgl/mBNGP/s1/2019-audi-q8-review.jpg"
+        "imageUrl": "https://cdn.motor1.com/images/mgl/mBNGP/s1/2019-audi-q8-review.jpg"
     },
     {
         "brand": "Mercedes",
@@ -500,7 +500,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 175000,
-        "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mercedes-Benz_SLS_AMG_%28C_197%29_%E2%80%93_Frontansicht_ge%C3%B6ffnet%2C_10._August_2011%2C_D%C3%BCsseldorf.jpg/1200px-Mercedes-Benz_SLS_AMG_%28C_197%29_%E2%80%93_Frontansicht_ge%C3%B6ffnet%2C_10._August_2011%2C_D%C3%BCsseldorf.jpg"
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Mercedes-Benz_SLS_AMG_%28C_197%29_%E2%80%93_Frontansicht_ge%C3%B6ffnet%2C_10._August_2011%2C_D%C3%BCsseldorf.jpg/1200px-Mercedes-Benz_SLS_AMG_%28C_197%29_%E2%80%93_Frontansicht_ge%C3%B6ffnet%2C_10._August_2011%2C_D%C3%BCsseldorf.jpg"
     },
     {
         "brand": "Mercedes",
@@ -512,7 +512,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 25000,
-        "link": "http://img.autoabc.lv/Mercedes-S-klase/Mercedes-S-klase_1993_Sedans_164832807_3.jpg"
+        "imageUrl": "http://img.autoabc.lv/Mercedes-S-klase/Mercedes-S-klase_1993_Sedans_164832807_3.jpg"
     },
     {
         "brand": "Bmw",
@@ -524,7 +524,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 130000,
-        "link": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-bmw-x5-m-140-1582911136.jpg?crop=0.784xw:0.882xh;0.0721xw,0.118xh&resize=640:*"
+        "imageUrl": "https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/2020-bmw-x5-m-140-1582911136.jpg?crop=0.784xw:0.882xh;0.0721xw,0.118xh&resize=640:*"
     },
     {
         "brand": "Mercedes",
@@ -536,7 +536,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 38000,
-        "link": "https://s.auto.drom.ru/img4/catalog/photos/fullsize/mercedes-benz/e-class/mercedes-benz_e-class_35651.jpg"
+        "imageUrl": "https://s.auto.drom.ru/img4/catalog/photos/fullsize/mercedes-benz/e-class/mercedes-benz_e-class_35651.jpg"
     },
     {
         "brand": "Bmw",
@@ -548,7 +548,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 5000,
-        "link": "https://bringatrailer.com/wp-content/uploads/2020/12/2006_bmw_x5_4-8is_161195509830b5555Exterior05-scaled-e1611998352532.jpg?fit=940%2C627"
+        "imageUrl": "https://bringatrailer.com/wp-content/uploads/2020/12/2006_bmw_x5_4-8is_161195509830b5555Exterior05-scaled-e1611998352532.jpg?fit=940%2C627"
     },
     {
         "brand": "Mercedes",
@@ -560,7 +560,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 60000,
-        "link": "https://di-uploads-pod6.dealerinspire.com/raycatenaofunion/uploads/2018/08/mercedes-benz-x-class-v6-157.jpg"
+        "imageUrl": "https://di-uploads-pod6.dealerinspire.com/raycatenaofunion/uploads/2018/08/mercedes-benz-x-class-v6-157.jpg"
     },
     {
         "brand": "Mercedes",
@@ -572,7 +572,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 84000,
-        "link": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/2018-mercedes-benz-cls450-sedan-grey-richard-berry-1200x800-%283%29.JPG"
+        "imageUrl": "https://carsguide-res.cloudinary.com/image/upload/f_auto,fl_lossy,q_auto,t_cg_hero_large/v1/editorial/2018-mercedes-benz-cls450-sedan-grey-richard-berry-1200x800-%283%29.JPG"
     },
     {
         "brand": "Ford",
@@ -584,7 +584,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 1000,
-        "link": "https://drive-my.com/wp-content/uploads/importedmedia/1026"
+        "imageUrl": "https://drive-my.com/wp-content/uploads/importedmedia/1026"
     },
     {
         "brand": "Ford",
@@ -596,7 +596,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Automata",
         "price": 30000,
-        "link": "https://cdn.motor1.com/images/mgl/Y0Gqy/s3/ford-puma-st-2020.webp"
+        "imageUrl": "https://cdn.motor1.com/images/mgl/Y0Gqy/s3/ford-puma-st-2020.webp"
     },
     {
         "brand": "Aston Martin",
@@ -608,7 +608,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 36000,
-        "link": "https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/v8-cygnet-2018-517.jpg"
+        "imageUrl": "https://www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/v8-cygnet-2018-517.jpg"
     },
     {
         "brand": "Ford",
@@ -620,7 +620,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 7000,
-        "link": "https://live.staticflickr.com/7815/46532518771_65a4a4fdf4_b.jpg"
+        "imageUrl": "https://live.staticflickr.com/7815/46532518771_65a4a4fdf4_b.jpg"
     },
     {
         "brand": "Volkswagen",
@@ -632,7 +632,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 50000,
-        "link": "https://www.reezocar.com/660/custojusto.pt/RZCCSTPT33481695/VOLKSWAGEN-TRANSPORTER-00.jpg"
+        "imageUrl": "https://www.reezocar.com/660/custojusto.pt/RZCCSTPT33481695/VOLKSWAGEN-TRANSPORTER-00.jpg"
     },
     {
         "brand": "Volkswagen",
@@ -644,7 +644,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 15000,
-        "link": "https://www.renderhub.com/squir/volkswagen-beetle-1950/volkswagen-beetle-1950-01.jpg"
+        "imageUrl": "https://www.renderhub.com/squir/volkswagen-beetle-1950/volkswagen-beetle-1950-01.jpg"
     },
     {
         "brand": "Toyota",
@@ -656,7 +656,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 10000,
-        "link": "https://www.auto-data.net/images/f33/Toyota-Supra-III-A7.jpg"
+        "imageUrl": "https://www.auto-data.net/images/f33/Toyota-Supra-III-A7.jpg"
     },
     {
         "brand": "Toyota",
@@ -668,7 +668,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 40000,
-        "link": "https://i.pinimg.com/originals/cc/a6/15/cca615bf926d5f5e82121794fe2bee4f.jpg"
+        "imageUrl": "https://i.pinimg.com/originals/cc/a6/15/cca615bf926d5f5e82121794fe2bee4f.jpg"
     },
     {
         "brand": "Mazda",
@@ -680,7 +680,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 20000,
-        "link": "https://www.carsaddiction.com/files/cars/98__RX-7_Version_5_Type_RS.jpg"
+        "imageUrl": "https://www.carsaddiction.com/files/cars/98__RX-7_Version_5_Type_RS.jpg"
     },
     {
         "brand": "Mazda",
@@ -692,7 +692,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 10000,
-        "link": "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/267321/1994-mazda-miata-archived-instrumented-test-car-and-driver-photo-614837-s-original.jpg?fill=18:11&resize=480:*"
+        "imageUrl": "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/media/267321/1994-mazda-miata-archived-instrumented-test-car-and-driver-photo-614837-s-original.jpg?fill=18:11&resize=480:*"
     },
     {
         "brand": "Volkswagen",
@@ -704,7 +704,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Automata",
         "price": 10000,
-        "link": "https://carsguide-res.cloudinary.com/image/upload/f_auto%2Cfl_lossy%2Cq_auto%2Ct_default/v1/editorial/dp/images/uploads/VW-Polo-77TSI-2010-W.jpg"
+        "imageUrl": "https://carsguide-res.cloudinary.com/image/upload/f_auto%2Cfl_lossy%2Cq_auto%2Ct_default/v1/editorial/dp/images/uploads/VW-Polo-77TSI-2010-W.jpg"
     },
     {
         "brand": "Lexus",
@@ -716,7 +716,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 4200,
-        "link": "https://images.cdn.circlesix.co/image/2/1200/630/5/uploads/posts/2015/12/b1ca5703484ec88dc62126de56e3a501.png"
+        "imageUrl": "https://images.cdn.circlesix.co/image/2/1200/630/5/uploads/posts/2015/12/b1ca5703484ec88dc62126de56e3a501.png"
     },
     {
         "brand": "Volkswagen",
@@ -728,7 +728,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Automata",
         "price": 14000,
-        "link": "https://eu.amcdn.co.za/cars/vw-golf-6-gti-dsg-2012-id-64356615-type-main.jpg"
+        "imageUrl": "https://eu.amcdn.co.za/cars/vw-golf-6-gti-dsg-2012-id-64356615-type-main.jpg"
     },
     {
         "brand": "Volkswagen",
@@ -740,7 +740,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 17000,
-        "link": "https://images-ext-1.discordapp.net/external/0CjaX4u3GrbTGZ9QF-R62_prm-JbchFOZZI0ybv3pYA/https/www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/golf_fcorn_01_july11.jpg?width=1029&height=683"
+        "imageUrl": "https://images-ext-1.discordapp.net/external/0CjaX4u3GrbTGZ9QF-R62_prm-JbchFOZZI0ybv3pYA/https/www.autocar.co.uk/sites/autocar.co.uk/files/images/car-reviews/first-drives/legacy/golf_fcorn_01_july11.jpg?width=1029&height=683"
     },
     {
         "brand": "Renault",
@@ -752,7 +752,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Manuala",
         "price": 6500,
-        "link": "https://d1ix0byejyn2u7.cloudfront.net/drive/images/made/drive/images/remote/https_ssl.caranddriving.com/f2/images/used/big/renaultscenic2012to2016_750_500_70.jpg"
+        "imageUrl": "https://d1ix0byejyn2u7.cloudfront.net/drive/images/made/drive/images/remote/https_ssl.caranddriving.com/f2/images/used/big/renaultscenic2012to2016_750_500_70.jpg"
     },
     {
         "brand": "Nissan",
@@ -764,7 +764,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 12000,
-        "link": "https://static.turbosquid.com/Preview/2020/03/06__09_13_40/s15.108.jpg0FA3C13F-3E2D-4B37-BD03-3FB631A0A4C6Large.jpg"
+        "imageUrl": "https://static.turbosquid.com/Preview/2020/03/06__09_13_40/s15.108.jpg0FA3C13F-3E2D-4B37-BD03-3FB631A0A4C6Large.jpg"
     },
     {
         "brand": "Bmw",
@@ -776,7 +776,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 86000,
-        "link": "https://znews-photo.zadn.vn/w660/Uploaded/abhuuwo/2020_10_24/bmw_m5_tuning_g_power_g5m_hurricane_rr_8.jpg"
+        "imageUrl": "https://znews-photo.zadn.vn/w660/Uploaded/abhuuwo/2020_10_24/bmw_m5_tuning_g_power_g5m_hurricane_rr_8.jpg"
     },
     {
         "brand": "Mercedes",
@@ -788,7 +788,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 107500,
-        "link": "https://mfair.ua/user/cars/52546/52546-noviy-sedan-mercedes-benz-e-class-63-s-amg-edition-one-kiev-2020-27.jpg"
+        "imageUrl": "https://mfair.ua/user/cars/52546/52546-noviy-sedan-mercedes-benz-e-class-63-s-amg-edition-one-kiev-2020-27.jpg"
     },
     {
         "brand": "Mercedes",
@@ -800,7 +800,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 58900,
-        "link": "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/11q1/379498/2012-mercedes-benz-c63-amg-mercedes-c-class-news-car-and-driver-photo-383194-s-original.jpg?fill=2:1&resize=1200:*"
+        "imageUrl": "https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/images/11q1/379498/2012-mercedes-benz-c63-amg-mercedes-c-class-news-car-and-driver-photo-383194-s-original.jpg?fill=2:1&resize=1200:*"
     },
     {
         "brand": "Volvo",
@@ -812,7 +812,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 17000,
-        "link": "http://img.autoabc.lv/volvo-xc90/volvo-xc90_2011_Apvidus_15101393503_11.jpg"
+        "imageUrl": "http://img.autoabc.lv/volvo-xc90/volvo-xc90_2011_Apvidus_15101393503_11.jpg"
     },
     {
         "brand": "Bmw",
@@ -824,7 +824,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 45000,
-        "link": "https://www.saspecialistcars.co.uk/assets/372464/large/22bdc7c58af7e690a36660f518f7b0a2_372464.jpg"
+        "imageUrl": "https://www.saspecialistcars.co.uk/assets/372464/large/22bdc7c58af7e690a36660f518f7b0a2_372464.jpg"
     },
     {
         "brand": "Porsche",
@@ -836,7 +836,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 90000,
-        "link": "https://cdn3.focus.bg/autodata/i/porsche/panamera/panamera/large/3f10705d324bb75a0205e3a53814d0f9.jpg"
+        "imageUrl": "https://cdn3.focus.bg/autodata/i/porsche/panamera/panamera/large/3f10705d324bb75a0205e3a53814d0f9.jpg"
     },
     {
         "brand": "Range Rover",
@@ -848,7 +848,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 80000,
-        "link": "https://i.ytimg.com/vi/hLQAMZcsYis/maxresdefault.jpg"
+        "imageUrl": "https://i.ytimg.com/vi/hLQAMZcsYis/maxresdefault.jpg"
     },
     {
         "brand": "Toyota",
@@ -860,7 +860,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 64000,
-        "link": "https://cdn.riastatic.com/photosnew/auto/photo/Toyota_Land-Cruiser-200__232324543f.jpg"
+        "imageUrl": "https://cdn.riastatic.com/photosnew/auto/photo/Toyota_Land-Cruiser-200__232324543f.jpg"
     },
     {
         "brand": "Lexus",
@@ -872,7 +872,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 89000,
-        "link": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Lexus_LX_570_%28URJ201W%29_IMG_4913.jpg/1280px-Lexus_LX_570_%28URJ201W%29_IMG_4913.jpg"
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Lexus_LX_570_%28URJ201W%29_IMG_4913.jpg/1280px-Lexus_LX_570_%28URJ201W%29_IMG_4913.jpg"
     },
     {
         "brand": "Dacia",
@@ -884,7 +884,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Manuala",
         "price": 1300,
-        "link": "https://img.drivemag.net/jato_car_photos/DACIA%2FLOGAN%2Fsedan%2F4%2F2005%2Fexterior-photos%2Fo%2Fdacia-logan-sedan-4-doors-2005-model-exterior-photos-0.jpg"
+        "imageUrl": "https://img.drivemag.net/jato_car_photos/DACIA%2FLOGAN%2Fsedan%2F4%2F2005%2Fexterior-photos%2Fo%2Fdacia-logan-sedan-4-doors-2005-model-exterior-photos-0.jpg"
     },
     {
         "brand": "Skoda",
@@ -896,7 +896,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Manuala",
         "price": 25000,
-        "link": "https://avatars.mds.yandex.net/get-verba/787013/2a000001609d3a3c1ad0a676f905dfbefc66/cattouch"
+        "imageUrl": "https://avatars.mds.yandex.net/get-verba/787013/2a000001609d3a3c1ad0a676f905dfbefc66/cattouch"
     },
     {
         "brand": "Lada",
@@ -908,7 +908,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Manuala",
         "price": 4200,
-        "link": "https://avatars.mds.yandex.net/get-verba/787013/2a000001609d49f598cf1c7e416f7cdea43f/cattouch"
+        "imageUrl": "https://avatars.mds.yandex.net/get-verba/787013/2a000001609d49f598cf1c7e416f7cdea43f/cattouch"
     },
     {
         "brand": "Bmw",
@@ -920,7 +920,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 30000,
-        "link": "https://i1.wp.com/autoiwc.ru/images/bmw/bmw-m5-e34.jpg"
+        "imageUrl": "https://i1.wp.com/autoiwc.ru/images/bmw/bmw-m5-e34.jpg"
     },
     {
         "brand": "Mercedes",
@@ -932,7 +932,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 40000,
-        "link": "https://s.auto.drom.ru/i24229/c/photos/fullsize/mercedes-benz/cla-class/mercedes-benz_cla-class_871186.jpg"
+        "imageUrl": "https://s.auto.drom.ru/i24229/c/photos/fullsize/mercedes-benz/cla-class/mercedes-benz_cla-class_871186.jpg"
     },
     {
         "brand": "Skoda",
@@ -944,7 +944,7 @@
         "traction_type": "Fata",
         "gearbox_type": "Automata",
         "price": 28000,
-        "link": "https://www.auto-data.net/images/f3/Skoda-Superb-III-facelift-2019.jpg"
+        "imageUrl": "https://www.auto-data.net/images/f3/Skoda-Superb-III-facelift-2019.jpg"
     },
     {
         "brand": "Mercedes",
@@ -956,7 +956,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 50000,
-        "link": "https://cdn.motor1.com/images/mgl/4M00Y/s1/mercedes-benz-gla-2020.jpg"
+        "imageUrl": "https://cdn.motor1.com/images/mgl/4M00Y/s1/mercedes-benz-gla-2020.jpg"
     },
     {
         "brand": "Mercedes",
@@ -968,7 +968,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 90000,
-        "link": "https://bringatrailer.com/wp-content/uploads/2020/05/2014_mercedes-benz_cls63_amg-s_1589899533149e710bcDSC_0007.jpg?fit=940%2C627"
+        "imageUrl": "https://bringatrailer.com/wp-content/uploads/2020/05/2014_mercedes-benz_cls63_amg-s_1589899533149e710bcDSC_0007.jpg?fit=940%2C627"
     },
     {
         "brand": "Bmw",
@@ -980,7 +980,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 6000,
-        "link": "https://vse-pro-bmw.info/wp-content/uploads/2020/10/otzyvy-bmw-e46-1-500x322.jpg"
+        "imageUrl": "https://vse-pro-bmw.info/wp-content/uploads/2020/10/otzyvy-bmw-e46-1-500x322.jpg"
     },
     {
         "brand": "Tesla",
@@ -992,7 +992,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 80000,
-        "link": "https://tesla-cdn.thron.com/delivery/public/image/tesla/56cb8c41-e898-44ce-b6b7-fe9b9a05f529/bvlatuR/std/1200x628/MS-Social"
+        "imageUrl": "https://tesla-cdn.thron.com/delivery/public/image/tesla/56cb8c41-e898-44ce-b6b7-fe9b9a05f529/bvlatuR/std/1200x628/MS-Social"
     },
     {
         "brand": "Mercedes",
@@ -1004,7 +1004,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Automata",
         "price": 10000,
-        "link": "https://i.pinimg.com/originals/c4/cb/7e/c4cb7e9147f75f289cd2d9743ee116a2.jpg"
+        "imageUrl": "https://i.pinimg.com/originals/c4/cb/7e/c4cb7e9147f75f289cd2d9743ee116a2.jpg"
     },
     {
         "brand": "Lada",
@@ -1016,7 +1016,7 @@
         "traction_type": "Spate",
         "gearbox_type": "Manuala",
         "price": 1100,
-        "link": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Vaz_2103.jpg"
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b1/Vaz_2103.jpg"
     },
     {
         "brand": "Tesla",
@@ -1028,7 +1028,7 @@
         "traction_type": "Integrala",
         "gearbox_type": "Automata",
         "price": 95000,
-        "link": "https://www.ccarprice.com/products/Tesla_Model_X_Performance_2021.jpg"
+        "imageUrl": "https://www.ccarprice.com/products/Tesla_Model_X_Performance_2021.jpg"
     },
     {
         "brand": "Mercedes",
@@ -1040,6 +1040,6 @@
         "traction_type": "Fata",
         "gearbox_type": "Automata",
         "price": 32000,
-        "link": "https://www.mercedes-benz.com/en/vehicles/passenger-cars/a-class/a-class-2019-feature-tutorials/_jcr_content/image/MQ6-12-image-20190218150301/00-mercedes-benz-a-class-2018-w177-v177-feature-tutorials-2560x1440.jpeg"
+        "imageUrl": "https://www.mercedes-benz.com/en/vehicles/passenger-cars/a-class/a-class-2019-feature-tutorials/_jcr_content/image/MQ6-12-image-20190218150301/00-mercedes-benz-a-class-2018-w177-v177-feature-tutorials-2560x1440.jpeg"
     }
 ]
