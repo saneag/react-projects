@@ -23,7 +23,7 @@ main {
         margin: 0px 20px;
     }
 
-    .showMore {
+    .show_btns {
         display: flex;
         justify-content: center;
 
@@ -39,6 +39,11 @@ main {
             &:hover {
                 background-color: #444;
             }
+        }
+
+        .showLessBtn {
+            margin-left: 20px;
+            @extend .showMoreBtn;
         }
     }
 }
