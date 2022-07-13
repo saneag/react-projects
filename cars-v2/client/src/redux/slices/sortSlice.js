@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
-    sortBy: 'marca',
-    sortOrder: true,
+    sortBy: 'brand',
+    sortOrder: 1,
     page: 1
 }
 

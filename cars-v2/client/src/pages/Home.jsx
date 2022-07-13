@@ -14,11 +14,11 @@ function Home() {
 
     React.useEffect(() => {
         dispatch(setLoading(true))
-        axios.get('/cars')
+        axios.get(`/cars?page=${page}&limit=${carsLimit}&sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}`)
             .then(res => {
-                dispatch(setCars(res.data))
-                if (page !== 1) dispatch(setCarsLimit(carsLimit + 12))
                 dispatch(setLoading(false))
+                dispatch(setCars(res.data))
+                // if (page !== 1) dispatch(setCarsLimit(carsLimit + 12))
                 dispatch(setShowReadMore(carsLimit > res.data.length ? false : true))
             })
     }, [page, carsLimit, search, sortBy, sortOrder, dispatch])

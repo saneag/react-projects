@@ -16,7 +16,7 @@ function Sort_Cars() {
     const sortOrder = useSelector(state => state.sort.sortOrder)
     const dispatch = useDispatch();
 
-    const sortMethods = React.useMemo(() => ['marca', 'an', 'putere', 'pret'], [])
+    const sortMethods = React.useMemo(() => ['brand', 'year', 'engine_power', 'price'], [])
 
     const handleClick = (method) => {
         setShowDropDown(!showDropDown)
@@ -25,7 +25,7 @@ function Sort_Cars() {
 
     const handleChange = (e) => {
         e.stopPropagation()
-        dispatch(setSortOrder(!sortOrder))
+        dispatch(setSortOrder(sortOrder === -1 ? 1 : -1))
     }
 
     return (
@@ -34,8 +34,8 @@ function Sort_Cars() {
                 <motion.div
                     className={`sort_title ${styles.sort_title}`}
                     onClick={() => setShowDropDown(!showDropDown)}>
-                    Sort by: {sortBy}
-                    <FontAwesomeIcon icon={sortOrder ? faArrowDown : faArrowUp}
+                    Sort by: {sortBy.replace(/_/g, ' ')}
+                    <FontAwesomeIcon icon={sortOrder === -1 ? faArrowDown : faArrowUp}
                         className={styles.sort_arrow}
                         onClick={e => handleChange(e)} />
                 </motion.div>

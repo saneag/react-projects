@@ -2,7 +2,16 @@ import Cars from '../models/Cars.js'
 
 export const getAll = async (req, res) => {
     try {
+        const limit = req.query.limit
+        const page = req.query.page
+        const sortBy = req.query.sortBy
+        const sortOrder = req.query.sortOrder
+        const search = req.query.search
         const cars = await Cars.find()
+            .limit(limit).skip(limit * (page - 1))
+            .sort({ [sortBy]: sortOrder })
+            .or({ brand: { $regex: search, $options: 'i' } }, { model: { $regex: search, $options: 'i' } })
+
         res.json(cars)
     }
     catch (err) {

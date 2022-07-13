@@ -22,7 +22,7 @@ function SortDropdown({ handleClick, sortMethods }) {
                     onClick={() => handleClick(method)}
                     className={`${styles.sort_option} ${sortBy === method ? styles.active : ''}`}
                 >
-                    {method}
+                    {method.replace(/_/g, ' ')}
                 </motion.li>
             )}
         </motion.ul>
