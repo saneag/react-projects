@@ -27,11 +27,11 @@ export const useRoutes = isAuthenticated => {
 
     return (
         <Routes>
+            <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
-            <Route path="/" element={<Home />} />
             <Route path='*' element={<Error />} />
         </Routes>
     )
