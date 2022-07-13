@@ -1,31 +1,46 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { Cars, Modal, Pagination, Search, Sort, Skeleton } from '../components/index.js'
-import { setCars, setCarsLimit, setShowReadMore, setLoading } from '../redux/slices/carSlice'
 
 import axios from '../utils/axios'
 
 function Home() {
     const dispatch = useDispatch()
-    const { sortBy, sortOrder, page } = useSelector(state => state.sort)
+    const { sortBy, sortOrder } = useSelector(state => state.sort)
     const search = useSelector(state => state.search.search)
     const selectedImg = useSelector(state => state.showModalCar.selectedImg)
-    const { cars, carsLimit, showReadMore, loading } = useSelector(state => state.carSlice)
+
+    const [cars, setCars] = React.useState([])
+    const [loading, setLoading] = React.useState(true)
+    const [carsLimit, setCarsLimit] = React.useState(12)
+    const [showReadMore, setShowReadMore] = React.useState(false)
+    const [showLess, setShowLess] = React.useState(false)
+    const [page, setPage] = React.useState(1)
 
     React.useEffect(() => {
-        dispatch(setLoading(true))
+        setLoading(true)
         axios.get(`/cars?page=${page}&limit=${carsLimit}&sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}`)
             .then(res => {
-                dispatch(setLoading(false))
-                dispatch(setCars(res.data))
-                // if (page !== 1) dispatch(setCarsLimit(carsLimit + 12))
-                dispatch(setShowReadMore(carsLimit > res.data.length ? false : true))
+                setLoading(false)
+                setCars(res.data)
+                setShowReadMore(carsLimit > res.data.length ? false : true)
+                setShowLess(carsLimit > 12 ? true : false)
             })
     }, [page, carsLimit, search, sortBy, sortOrder, dispatch])
 
+    React.useEffect(() => {
+        setPage(1)
+    }, [search])
+
     const showMoreCars = () => {
         if (carsLimit <= cars.length) {
-            dispatch(setCarsLimit(carsLimit + 12))
+            setCarsLimit(carsLimit + 12)
+        }
+    }
+
+    const showLessCars = () => {
+        if (carsLimit > 12) {
+            setCarsLimit(carsLimit - 12)
         }
     }
 
@@ -46,12 +61,20 @@ function Home() {
                     <Modal cars={cars} />
                 )
             }
-            <Pagination />
-            <div className='showMore'>
-                {
-                    showReadMore && page === 1 &&
-                    <button className='showMoreBtn' onClick={showMoreCars}>Show more</button>
-                }
+            <Pagination page={page} setPage={setPage} />
+            <div className='show_btns'>
+                <div>
+                    {
+                        showReadMore && page === 1 &&
+                        <button className='showMoreBtn' onClick={showMoreCars}>Show more</button>
+                    }
+                </div>
+                <div>
+                    {
+                        showLess && page === 1 &&
+                        <button className='showLessBtn' onClick={showLessCars}>Show Less</button>
+                    }
+                </div>
             </div>
         </main>
     )
