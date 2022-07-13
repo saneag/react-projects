@@ -9,8 +9,8 @@ export const getAll = async (req, res) => {
         const search = req.query.search
         const cars = await Cars.find()
             .limit(limit).skip(limit * (page - 1))
-            .sort({ [sortBy]: sortOrder })
-            .or({ brand: { $regex: search, $options: 'i' } }, { model: { $regex: search, $options: 'i' } })
+            .sort({ [sortBy]: sortOrder, _id: sortOrder })
+            .or([{ brand: { $regex: search, $options: 'i' } }, { model: { $regex: search, $options: 'i' } }])
 
         res.json(cars)
     }
