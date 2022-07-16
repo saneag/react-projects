@@ -40,6 +40,11 @@ const CarsSchema = new mongoose.Schema({
     imageUrl: {
         type: String,
         required: true,
+    },
+    added_by: {
+        type: String,
+        ref: 'User',
+        required: true,
     }
 })
 
