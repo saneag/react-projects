@@ -9,6 +9,7 @@ import SignUp from './pages/SignUp'
 import About from './pages/About'
 import AddCar from './pages/AddCar'
 import EditCar from './pages/EditCar'
+import EditUser from './pages/EditUser'
 import Contact from './pages/Contact'
 
 export const useRoutes = isAuthenticated => {
@@ -19,7 +20,9 @@ export const useRoutes = isAuthenticated => {
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/add_car" element={<AddCar />} />
+                <Route path="/signin" element={<SignIn />} />
                 <Route path="/edit_car" element={<EditCar />} />
+                <Route path="/edit_user" element={<EditUser />} />
                 <Route path='*' element={<Error />} />
             </Routes>
         )
