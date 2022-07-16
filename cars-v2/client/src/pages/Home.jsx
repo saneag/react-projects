@@ -8,7 +8,7 @@ function Home() {
     const dispatch = useDispatch()
     const { sortBy, sortOrder } = useSelector(state => state.sort)
     const search = useSelector(state => state.search.search)
-    const { selectedImg, selectedCar } = useSelector(state => state.showModalCar)
+    const selectedCar = useSelector(state => state.showModalCar)
 
     const [cars, setCars] = React.useState([])
     const [loading, setLoading] = React.useState(true)
