@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setShowModal, setSelectedImg } from '../../redux/slices/showModalCarSlice'
+import { setShowModal, setSelectedImg, setSelectedCar } from '../../redux/slices/showModalCarSlice'
 
 import { motion } from 'framer-motion'
 
@@ -8,18 +8,15 @@ import convertPrice from '../../utils/convertPrice'
 
 import styles from './styles.module.scss'
 
-function Modal({ cars }) {
+function Modal() {
     const dispatch = useDispatch()
-    const selectedImg = useSelector(state => state.showModalCar.selectedImg)
+    const selectedCar = useSelector(state => state.showModalCar.selectedCar)
     const showModal = useSelector(state => state.showModalCar.showModal)
 
     const handleClick = () => {
         dispatch(setShowModal(!showModal))
-        if (selectedImg) {
-            dispatch(setSelectedImg(null))
-        }
+        dispatch(setSelectedCar(null))
     }
-    const car = React.useMemo(() => cars.find(car => car.imageUrl === selectedImg), [cars, selectedImg])
 
     const price = (value) => convertPrice(value)
 
@@ -50,7 +47,7 @@ function Modal({ cars }) {
             <motion.div className={styles.modal_content}
                 onClick={closeModal}
             >
-                <motion.img src={selectedImg}
+                <motion.img src={selectedCar.imageUrl}
                     initial={{ y: '-100vh' }}
                     animate={{ y: '0px' }} />
                 <motion.div className={styles.info}
@@ -58,17 +55,29 @@ function Modal({ cars }) {
                     animate={{ x: '0px' }}>
                     <div>
                         {
-                            Object.keys(car).map((key, index) =>
-                                index !== 0 && index !== 10 && index !== 11 ? <p key={key}><span>{key.replace(/_/, ' ')} :</span></p> : '')
+                            Object.keys(selectedCar)
+                                .filter(key => key !== 'imageUrl' && key !== '_id' && key !== '__v')
+                                .map(key => {
+                                    return <p key={key}><span>{key.replace(/_/, ' ')} :</span></p>
+                                })
                         }
                     </div>
                     <div>
                         {
-                            Object.values(car).map((value, index) =>
-                                index !== 0 && index !== 10 && index !== 11 ? <p key={value}>
-                                    {index === 9 ? `$ ${price(car.price)}` : value}
-                                    {index === 5 ? ' ml' : index === 6 ? ' hp' : ''}
-                                </p> : '')
+                            Object.keys(selectedCar)
+                                .filter(key => key !== 'imageUrl' && key !== '_id' && key !== '__v')
+                                .map(key => {
+                                    return <p key={selectedCar[key]}>
+                                        <span>
+                                            {
+                                                key === 'engine_capacity' ? `${selectedCar[key]} ml` :
+                                                    key === 'engine_power' ? `${selectedCar[key]} hp` :
+                                                        key === 'price' ? `$ ${price(selectedCar[key])}` :
+                                                            selectedCar[key]
+                                            }
+                                        </span>
+                                    </p>
+                                })
                         }
                     </div>
                 </motion.div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { setSelectedImg } from '../../redux/slices/showModalCarSlice'
+import { setSelectedCar } from '../../redux/slices/showModalCarSlice'
 
 import { motion } from 'framer-motion'
 
@@ -24,7 +24,7 @@ function Car(car) {
                 onHoverEnd={() => setShowInfo(false)}
             >
                 <motion.div key={car.imageUrl}
-                    onClick={() => { dispatch(setSelectedImg(car.imageUrl)) }}
+                    onClick={() => { dispatch(setSelectedCar(car)) }}
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}>
