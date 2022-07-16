@@ -1,4 +1,5 @@
 import Cars from '../models/Cars.js'
+import UserModel from '../models/User.js'
 
 export const getAll = async (req, res) => {
     try {
@@ -20,31 +21,33 @@ export const getAll = async (req, res) => {
     }
 }
 
-export const getOne = async (req, res) => {
-    try {
-        const carId = await req.params.id
+// export const getOne = async (req, res) => {
+//     try {
+//         const carId = await req.params.id
 
-        Cars.findOne({ _id: carId }, (err, res) => {
-            if (err) {
-                console.log('Could not get car')
-                return res.status(500).json({ message: err.message })
-            }
+//         Cars.findOne({ _id: carId }, (err, res) => {
+//             if (err) {
+//                 console.log('Could not get car')
+//                 return res.status(500).json({ message: err.message })
+//             }
 
-            if (!res) {
-                return res.status(404).json({ message: 'Car not found' })
-            }
+//             if (!res) {
+//                 return res.status(404).json({ message: 'Car not found' })
+//             }
 
-            res.json(res)
-        })
-    }
-    catch (err) {
-        console.log('Could not get cars')
-        res.status(500).json({ message: err.message })
-    }
-}
+//             res.json(res)
+//         })
+//     }
+//     catch (err) {
+//         console.log('Could not get cars')
+//         res.status(500).json({ message: err.message })
+//     }
+// }
 
 export const setCar = async (req, res) => {
     try {
+        const user = await UserModel.findOne({ _id: req.userId })
+        console.log(user)
         const doc = new Cars({
             brand: req.body.brand,
             model: req.body.model,
@@ -55,7 +58,8 @@ export const setCar = async (req, res) => {
             traction_type: req.body.traction_type,
             gearbox_type: req.body.gearbox_type,
             price: req.body.price,
-            imageUrl: req.body.imageUrl
+            imageUrl: req.body.imageUrl,
+            added_by: user.name,
         })
 
         const cars = await doc.save()
