@@ -8,7 +8,7 @@ function Home() {
     const dispatch = useDispatch()
     const { sortBy, sortOrder } = useSelector(state => state.sort)
     const search = useSelector(state => state.search.search)
-    const selectedCar = useSelector(state => state.showModalCar)
+    const selectedCar = useSelector(state => state.showModalCar.selectedCar)
 
     const [cars, setCars] = React.useState([])
     const [loading, setLoading] = React.useState(true)
@@ -56,11 +56,7 @@ function Home() {
                         cars.map(car => <Cars key={car.brand + car.model + car.price} {...car} />)
                 }
             </div>
-            {
-                selectedCar && (
-                    <Modal />
-                )
-            }
+            {selectedCar && <Modal />}
             <Pagination page={page} setPage={setPage} />
             <div className='show_btns'>
                 <div>
