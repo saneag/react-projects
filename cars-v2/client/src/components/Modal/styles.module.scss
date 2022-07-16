@@ -69,6 +69,11 @@
         font-style: italic;
         line-height: 1.2;
 
+        &::first-letter {
+            text-transform: uppercase;
+
+        }
+
         @media screen and (max-width: 768px) {
             font-size: 1.2em;
         }
@@ -80,7 +85,6 @@
         span {
             font-weight: bold;
             font-style: normal;
-            text-transform: capitalize;
         }
     }
 }
