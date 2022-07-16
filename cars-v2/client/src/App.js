@@ -1,17 +1,25 @@
 import React from 'react'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { useRoutes } from './Routes'
 import Header from './components/Header'
 import Footer from './components/Footer'
 
+import { isAuthenticated, fetchAuthUser } from './redux/slices/userAuthSlice'
+
 import './styles/App.scss'
 
 function App() {
+  const dispatch = useDispatch()
+  const isAuth = useSelector(isAuthenticated)
   const theme = useSelector(state => state.changeTheme.theme)
 
-  const routes = useRoutes(false)
+  React.useEffect(() => {
+    dispatch(fetchAuthUser())
+  }, [])
+
+  const routes = useRoutes(isAuth)
 
   return (
     <div className='App' id={theme}>

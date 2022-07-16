@@ -1,9 +1,14 @@
 import React from 'react'
+import { Navigate } from 'react-router-dom'
+import { useSelector, useDispatch } from 'react-redux'
 import { useForm } from 'react-hook-form'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEye } from '@fortawesome/free-solid-svg-icons'
+import { fetchAuth, isAuthenticated } from '../redux/slices/userAuthSlice'
 
 function SignIn() {
+    const dispatch = useDispatch()
+    const isAuth = useSelector(isAuthenticated)
     const [passwordVisibility, setPasswordVisibility] = React.useState(false)
 
     const { register, handleSubmit, setError, formState: { errors, isValid } } = useForm({
@@ -14,8 +19,17 @@ function SignIn() {
         mode: 'onChange'
     })
 
-    const onSubmit = (data) => {
-        console.log(data)
+    const onSubmit = async (values) => {
+        const data = await dispatch(fetchAuth(values))
+        if ('token' in data.payload) {
+            window.localStorage.setItem('token', data.payload.token)
+        } else {
+            alert('Could not sign in')
+        }
+    }
+
+    if (isAuth) {
+        return <Navigate to='/' />
     }
 
     return (

@@ -43,8 +43,13 @@ import axios from '../../utils/axios'
 
 // export default userAuthSlice.reducer
 
-export const fetchUserData = createAsyncThunk('auth/fetUserData', async (params) => {
+export const fetchAuth = createAsyncThunk('auth/fetchUserData', async (params) => {
     const { data } = await axios.post('/auth/login', params)
+    return data
+})
+
+export const fetchAuthUser = createAsyncThunk('auth/fetchAuthUser', async (params) => {
+    const { data } = await axios.get('/auth/me')
     return data
 })
 
@@ -56,16 +61,33 @@ const initialState = {
 const userAuthSlice = createSlice({
     name: 'userAuth',
     initialState,
+    reducers: {
+        logout: (state) => {
+            state.data = null
+        }
+    },
     extraReducers: {
-        [fetchUserData.pending]: (state) => {
+        [fetchAuth.pending]: (state) => {
             state.status = 'loading'
             state.data = null
         },
-        [fetchUserData.fulfilled]: (state, action) => {
-            state.status = 'success'
+        [fetchAuth.fulfilled]: (state, action) => {
+            state.status = 'loaded'
             state.data = action.payload
         },
-        [fetchUserData.rejected]: (state, action) => {
+        [fetchAuth.rejected]: (state, action) => {
+            state.status = 'error'
+            state.data = null
+        },
+        [fetchAuthUser.pending]: (state) => {
+            state.status = 'loading'
+            state.data = null
+        },
+        [fetchAuthUser.fulfilled]: (state, action) => {
+            state.status = 'loaded'
+            state.data = action.payload
+        },
+        [fetchAuthUser.rejected]: (state, action) => {
             state.status = 'error'
             state.data = null
         }
@@ -73,3 +95,7 @@ const userAuthSlice = createSlice({
 })
 
 export const userReducer = userAuthSlice.reducer
+
+export const isAuthenticated = state => Boolean(state.auth.data)
+
+export const { logout } = userAuthSlice.actions
