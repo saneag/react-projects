@@ -10,6 +10,7 @@ function SignIn() {
     const dispatch = useDispatch()
     const isAuth = useSelector(isAuthenticated)
     const [passwordVisibility, setPasswordVisibility] = React.useState(false)
+    const [isChecked, setIsChecked] = React.useState(false)
 
     const { register, handleSubmit, setError, formState: { errors, isValid } } = useForm({
         defaultValues: {
@@ -21,8 +22,10 @@ function SignIn() {
 
     const onSubmit = async (values) => {
         const data = await dispatch(fetchAuth(values))
-        if ('token' in data.payload) {
+        if (isChecked && 'token' in data.payload) {
             window.localStorage.setItem('token', data.payload.token)
+        } else if (!isChecked && 'token' in data.payload) {
+            window.sessionStorage.setItem('token', data.payload.token)
         } else {
             alert('Could not sign in')
         }
@@ -69,6 +72,7 @@ function SignIn() {
                             <input
                                 id='checkbox_input'
                                 type='checkbox'
+                                onChange={() => setIsChecked(!isChecked)}
                             />
                             <label htmlFor='checkbox_input'>Stay logged in</label>
                         </div>
