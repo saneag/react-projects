@@ -12,12 +12,12 @@ function SignIn() {
     const [passwordVisibility, setPasswordVisibility] = React.useState(false)
     const [isChecked, setIsChecked] = React.useState(false)
 
-    const { register, handleSubmit, setError, formState: { errors, isValid } } = useForm({
+    const { register, handleSubmit, formState: { errors, isValid } } = useForm({
         defaultValues: {
             email: '',
             password: ''
         },
-        mode: 'onChange'
+        mode: 'onTouched'
     })
 
     const onSubmit = async (values) => {
@@ -45,8 +45,7 @@ function SignIn() {
                             placeholder='Enter Email'
                             id='email_input'
                             type='text'
-                            maxLength='20'
-                            {...register('email', { required: "Input email" })}
+                            {...register('email', { required: "* Input email" })}
                         />
                         <span className='border'></span>
                     </div>
@@ -57,8 +56,7 @@ function SignIn() {
                             placeholder='Enter Password'
                             id='pass_input'
                             type={passwordVisibility ? 'text' : 'password'}
-                            maxLength='20'
-                            {...register('password', { required: "Input password" })}
+                            {...register('password', { required: "* Input password" })}
                         />
                         <FontAwesomeIcon icon={faEye}
                             className='show_pass'
@@ -80,6 +78,7 @@ function SignIn() {
                     <button
                         className='sign_in_btn'
                         type='submit'
+                        disabled={!isValid}
                     >
                         Sign in
                     </button>
