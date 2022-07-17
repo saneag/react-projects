@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 import { handleImageUpload } from '../../utils/compress_images'
 
@@ -10,6 +10,10 @@ import styles from './styles.module.scss'
 function AddCar() {
     const isAuth = useSelector(isAuthenticated)
 
+    // const inputs = ['brand', 'model', 'year', 'fuel type',
+    //     'engine capacity', 'engine power', 'traction type', 'gearbox type',
+    //     'price', 'image url']
+
     if (!isAuth) {
         return <Navigate to="/" />
     }
@@ -18,7 +22,8 @@ function AddCar() {
     return (
         <main className={styles.root}>
             <div className={styles.add_car_form}>
-                <h1>Add Car</h1>
+                <p className={styles.caption}>Add Car</p>
+
             </div>
         </main>
     )
