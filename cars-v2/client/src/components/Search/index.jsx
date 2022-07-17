@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { setSearch } from '../../redux/slices/searchSlice'
 import debounce from 'lodash/debounce'
 
@@ -10,7 +10,17 @@ import styles from './styles.module.scss'
 
 function Search() {
     const dispatch = useDispatch()
+    const userData = useSelector(state => state.auth.data)
+    const search = useSelector(state => state.search.search)
     const [searchValue, setSearchValue] = React.useState('')
+
+    React.useEffect(() => {
+        if (search) {
+            dispatch(setSearch(''))
+            setSearchValue('')
+        }
+        // eslint-disable-next-line
+    }, [userData])
 
     const inputRef = React.useRef()
 
@@ -19,6 +29,7 @@ function Search() {
         updateSearchValue(event.target.value)
     }
 
+    // eslint-disable-next-line
     const updateSearchValue = React.useCallback(
         debounce(value => {
             dispatch(setSearch(value))
