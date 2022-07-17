@@ -21,6 +21,7 @@ export const useRoutes = isAuthenticated => {
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/add_car" element={<AddCar />} />
                 <Route path="/signin" element={<SignIn />} />
+                <Route path="/signup" element={<SignUp />} />
                 <Route path="/edit_car" element={<EditCar />} />
                 <Route path="/edit_user" element={<EditUser />} />
                 <Route path='*' element={<Error />} />
@@ -35,6 +36,7 @@ export const useRoutes = isAuthenticated => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/signin" element={<SignIn />} />
             <Route path="/signup" element={<SignUp />} />
+            <Route path="/add_car" element={<AddCar />} />
             <Route path='*' element={<Error />} />
         </Routes>
     )
