@@ -47,7 +47,6 @@ export const getAll = async (req, res) => {
 export const setCar = async (req, res) => {
     try {
         const user = await UserModel.findOne({ _id: req.userId })
-        console.log(user)
         const doc = new Cars({
             brand: req.body.brand,
             model: req.body.model,
@@ -60,6 +59,7 @@ export const setCar = async (req, res) => {
             price: req.body.price,
             imageUrl: req.body.imageUrl,
             added_by: user.name,
+            added_by_id: user._id
         })
 
         const cars = await doc.save()

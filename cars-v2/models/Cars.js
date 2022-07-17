@@ -43,7 +43,10 @@ const CarsSchema = new mongoose.Schema({
     },
     added_by: {
         type: String,
-        ref: 'User',
+        required: true,
+    },
+    added_by_id: {
+        type: String,
         required: true,
     }
 })

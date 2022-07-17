@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setShowModal, setSelectedImg, setSelectedCar } from '../../redux/slices/showModalCarSlice'
+import { setShowModal, setSelectedCar } from '../../redux/slices/showModalCarSlice'
 
 import { motion } from 'framer-motion'
 
@@ -56,7 +56,7 @@ function Modal() {
                     <div>
                         {
                             Object.keys(selectedCar)
-                                .filter(key => key !== 'imageUrl' && key !== '_id' && key !== '__v')
+                                .filter(key => key !== 'imageUrl' && key !== '_id' && key !== '__v' && key !== 'added_by_id')
                                 .map(key => {
                                     return <p key={key}><span>{key.replace(/_/, ' ')} :</span></p>
                                 })
@@ -65,7 +65,7 @@ function Modal() {
                     <div>
                         {
                             Object.keys(selectedCar)
-                                .filter(key => key !== 'imageUrl' && key !== '_id' && key !== '__v')
+                                .filter(key => key !== 'imageUrl' && key !== '_id' && key !== '__v' && key !== 'added_by_id')
                                 .map(key => {
                                     return <p key={selectedCar[key]}>
                                         <span>
