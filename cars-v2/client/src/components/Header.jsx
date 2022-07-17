@@ -15,6 +15,7 @@ import { isAuthenticated, logout } from '../redux/slices/userAuthSlice'
 
 function Header() {
     const dispatch = useDispatch()
+    const userData = useSelector(state => state.auth.data)
     const theme = useSelector(state => state.changeTheme.theme)
 
     const toggleTheme = () => {
@@ -50,7 +51,7 @@ function Header() {
                     <Link to={!isAuth ? '/signin' : '/edit_user'}
                         element={!isAuth ? <SignIn /> : <EditUser />}
                         className='sign_in auth_btn'>
-                        {!isAuth ? 'Sign in' : 'user'}
+                        {!isAuth ? 'Sign in' : userData.name}
                     </Link>
                     <Link to={!isAuth ? '/signup' : '/'}
                         element={!isAuth ? <SignUp /> : null}
