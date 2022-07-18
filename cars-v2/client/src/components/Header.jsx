@@ -32,6 +32,7 @@ function Header() {
         if (isAuth && window.confirm('Are you sure you want to logout?')) {
             dispatch(logout())
             window.localStorage.removeItem('token')
+            window.sessionStorage.removeItem('token')
         }
     }
 
