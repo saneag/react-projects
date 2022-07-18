@@ -15,6 +15,7 @@ function Car(car) {
     const userData = useSelector(state => state.auth.data)
     const [showInfo, setShowInfo] = React.useState(false)
     const [showEdit, setShowEdit] = React.useState(false)
+    const [showEditAdmin, setShowEditAdmin] = React.useState(false)
 
     const price = (value) => convertPrice(value)
 
@@ -23,12 +24,18 @@ function Car(car) {
         if (userData && userData._id === car.added_by_id) {
             setShowEdit(true)
         }
+        if (userData._id === '62d40fa93d9cecb2a8bea1f7') {
+            setShowEditAdmin(true)
+        }
     }
 
     const handleOnHoverEnd = () => {
         setShowInfo(false)
         if (userData && userData._id === car.added_by_id) {
             setShowEdit(false)
+        }
+        if (userData._id === '62d40fa93d9cecb2a8bea1f7') {
+            setShowEditAdmin(false)
         }
     }
 
@@ -60,6 +67,21 @@ function Car(car) {
                             className={styles.image}
                             animate={{ opacity: 1 }}></motion.img>
                         {showEdit &&
+                            <div
+                                className={styles.edit_btns}
+                                onClick={e => e.stopPropagation()}
+                            >
+                                <motion.div
+                                    initial={{ opacity: 0 }}
+                                    animate={{ opacity: 1 }}
+                                    transition={{ duration: 0.2 }}
+                                >
+                                    <FontAwesomeIcon icon={faXmark} className={styles.delete} onClick={deleteCar} />
+                                    <FontAwesomeIcon icon={faPen} className={styles.edit} onClick={editCar} />
+                                </motion.div>
+                            </div>
+                        }
+                        {showEditAdmin &&
                             <div
                                 className={styles.edit_btns}
                                 onClick={e => e.stopPropagation()}
