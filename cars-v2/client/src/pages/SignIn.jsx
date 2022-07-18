@@ -17,7 +17,7 @@ function SignIn() {
             email: '',
             password: ''
         },
-        mode: 'onTouched'
+        mode: 'onChange'
     })
 
     const onSubmit = async (values) => {
