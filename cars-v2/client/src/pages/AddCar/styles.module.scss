@@ -4,7 +4,6 @@
     align-items: center;
 
     .add_car_form {
-        margin-top: 50px;
         width: 22rem;
         height: 30rem;
         background-color: #474E5C;
@@ -19,20 +18,75 @@
         }
 
         .caption {
+            margin-bottom: 30px;
             font-size: 2rem;
             font-weight: bold;
             color: white;
         }
 
-        .input_field {
+        form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
 
-            label {
-                color: white;
-                font-size: 1.4rem;
+            .input_field {
+                display: flex;
+                flex-direction: column;
+                position: relative;
+
+                input {
+                    border-bottom: 1px solid white;
+                    background-color: transparent;
+                    color: white;
+                    font-size: 1.2rem;
+                    padding: 5px;
+                    width: 200px;
+
+                    &::-webkit-outer-spin-button,
+                    &::-webkit-inner-spin-button {
+                        -webkit-appearance: none;
+                        margin: 0;
+                    }
+
+                    &[type=number] {
+                        -moz-appearance: textfield;
+                    }
+
+                    &[type="file"] {
+                        display: none;
+                    }
+                }
+
+                label {
+                    margin-top: 10px;
+                    color: white;
+                    font-size: 1.4rem;
+
+                    &::first-letter {
+                        text-transform: uppercase;
+                    }
+                }
+
+                .delete_icon {
+                    color: white;
+                    position: absolute;
+                    right: 10px;
+                    top: 40px;
+                    cursor: pointer;
+                }
             }
 
-            display: grid;
-            flex-direction: column;
+            .file_upload {
+                cursor: pointer;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+                width: 200px;
+                height: 100px;
+                border: 2px dotted gray;
+            }
         }
     }
 }
