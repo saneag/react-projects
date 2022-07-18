@@ -1,20 +1,15 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { setPage } from '../../redux/slices/sortSlice'
 import ReactPagination from 'react-responsive-pagination'
 
 import styles from './styles.module.scss'
 
-function Pagination() {
-    const dispatch = useDispatch()
-    const page = useSelector(state => state.sort.page)
-
+function Pagination({ page, setPage }) {
     return (
         <ReactPagination
             className={`${styles.root} pagination`}
             current={page}
             total={8}
-            onPageChange={(currentPage) => { dispatch(setPage(currentPage)); window.scrollTo(0, 0) }}
+            onPageChange={(currentPage) => { setPage(currentPage); window.scrollTo(0, 0) }}
             previousLabel={'←'}
             nextLabel={'→'}
         />

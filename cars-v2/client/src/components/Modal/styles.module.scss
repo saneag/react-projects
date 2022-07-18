@@ -21,10 +21,14 @@
         align-items: center;
         gap: 30px;
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 747px) {
             flex-direction: column;
             padding: 40px 30px;
             gap: 20px;
+        }
+
+        @media screen and (orientation: landscape) and(max-width: 900px) {
+            padding: 10px;
         }
 
         img {
@@ -65,18 +69,22 @@
         font-style: italic;
         line-height: 1.2;
 
-        @media screen and (max-width: 670px) {
+        &::first-letter {
+            text-transform: uppercase;
+
+        }
+
+        @media screen and (max-width: 768px) {
             font-size: 1.2em;
         }
 
-        @media screen and (orientation: landscape) {
+        @media screen and(max-width: 400px) {
             font-size: 1.1em;
         }
 
         span {
             font-weight: bold;
             font-style: normal;
-            text-transform: capitalize;
         }
     }
 }

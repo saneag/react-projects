@@ -1,43 +1,76 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import axios from '../../utils/axios'
+
+export const fetchAuth = createAsyncThunk('auth/fetchUserData', async (params) => {
+    const { data } = await axios.post('/auth/login', params)
+    return data
+})
+
+export const fetchAuthUser = createAsyncThunk('auth/fetchAuthUser', async (params) => {
+    const { data } = await axios.get('/auth/me')
+    return data
+})
+
+export const fetchRegister = createAsyncThunk('auth/fetchRegister', async (params) => {
+    const { data } = await axios.post('/auth/register', params)
+    return data
+})
 
 const initialState = {
-    email: '',
-    name: '',
-    password: '',
-    repeatPassword: '',
-    isLogged: false,
-    stayLogged: false,
-    message: ''
+    data: null,
+    status: 'loading'
 }
 
 const userAuthSlice = createSlice({
     name: 'userAuth',
     initialState,
     reducers: {
-        setEmail: (state, action) => {
-            state.email = action.payload
+        logout: (state) => {
+            state.data = null
+        }
+    },
+    extraReducers: {
+        [fetchAuth.pending]: (state) => {
+            state.status = 'loading'
+            state.data = null
         },
-        setName(state, action) {
-            state.name = action.payload
+        [fetchAuth.fulfilled]: (state, action) => {
+            state.status = 'loaded'
+            state.data = action.payload
         },
-        setPassword(state, action) {
-            state.password = action.payload
+        [fetchAuth.rejected]: (state, action) => {
+            state.status = 'error'
+            state.data = null
         },
-        setRepeatPassword(state, action) {
-            state.repeatPassword = action.payload
+        [fetchAuthUser.pending]: (state) => {
+            state.status = 'loading'
+            state.data = null
         },
-        setIsLogged(state, action) {
-            state.isLogged = action.payload
+        [fetchAuthUser.fulfilled]: (state, action) => {
+            state.status = 'loaded'
+            state.data = action.payload
         },
-        setStayLogged(state, action) {
-            state.stayLogged = action.payload
+        [fetchAuthUser.rejected]: (state, action) => {
+            state.status = 'error'
+            state.data = null
         },
-        setMessage(state, action) {
-            state.message = action.payload
+        [fetchRegister.pending]: (state) => {
+            state.status = 'loading'
+            state.data = null
         },
+        [fetchRegister.fulfilled]: (state, action) => {
+            state.status = 'loaded'
+            state.data = action.payload
+        },
+        [fetchRegister.rejected]: (state, action) => {
+            state.status = 'error'
+            state.data = null
+        }
     }
 })
 
-export const { setEmail, setName, setPassword, setRepeatPassword, setIsLogged, setStayLogged, setMessage } = userAuthSlice.actions
+export const userReducer = userAuthSlice.reducer
 
-export default userAuthSlice.reducer
+export const isAuthenticated = state => Boolean(state.auth.data)
+
+export const { logout } = userAuthSlice.actions

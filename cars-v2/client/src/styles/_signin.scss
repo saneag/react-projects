@@ -6,7 +6,7 @@
 
     .form {
         margin-top: 50px;
-        width: 30rem;
+        width: 22rem;
         height: 30rem;
         background-color: #474E5C;
         border-radius: 20px;
@@ -14,6 +14,10 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+
+        @media screen and (min-width: 768px) {
+            width: 30rem;
+        }
 
         .input_field {
             position: relative;
@@ -36,9 +40,18 @@
                 border-radius: 10px;
                 padding: 0 10px;
                 font-size: 1.4rem;
-                color: $yellow;
+                color: white;
                 background-color: transparent;
                 transition: all 0.3s ease;
+
+                &:-webkit-autofill,
+                &:-webkit-autofill:focus {
+                    transition: background-color 600000s 0s, color 600000s 0s;
+                }
+
+                &[data-autocompleted] {
+                    background-color: transparent !important;
+                }
 
                 &~.border {
                     position: absolute;
@@ -119,15 +132,22 @@
                 border: 1px solid $yellow;
             }
         }
+
+        .error_message {
+            margin-top: 10px;
+            font-weight: bold;
+            font-size: 18px;
+            color: red;
+        }
     }
 }
 
 .sign_up_page {
     .form {
-        height: 35rem;
+        height: 40rem;
     }
 
     .sign_in_btn {
-        margin-top: 10px;
+        margin-top: 20px;
     }
 }

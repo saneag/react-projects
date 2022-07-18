@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
     showModal: false,
-    selectedImg: null
+    selectedCar: null,
 }
 
 const showModalCarSlice = createSlice({
@@ -12,12 +12,12 @@ const showModalCarSlice = createSlice({
         setShowModal(state, action) {
             state.showModal = action.payload
         },
-        setSelectedImg(state, action) {
-            state.selectedImg = action.payload
-        }
+        setSelectedCar(state, action) {
+            state.selectedCar = action.payload
+        },
     }
 })
 
-export const { setShowModal, setSelectedImg } = showModalCarSlice.actions
+export const { setShowModal, setSelectedCar } = showModalCarSlice.actions
 
 export default showModalCarSlice.reducer

@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Error() {
+function EditUser() {
     return (
         <div>
-            <h1>Error Page</h1>
+            EditUser
         </div>
     )
 }
 
-export default Error
+export default EditUser
