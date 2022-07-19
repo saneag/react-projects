@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { setSelectedCar } from '../../redux/slices/showModalCarSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -24,7 +25,7 @@ function Car(car) {
         if (userData && userData._id === car.added_by_id) {
             setShowEdit(true)
         }
-        if (userData._id === '62d40fa93d9cecb2a8bea1f7') {
+        if (userData.role === 'admin') {
             setShowEditAdmin(true)
         }
     }
@@ -34,17 +35,9 @@ function Car(car) {
         if (userData && userData._id === car.added_by_id) {
             setShowEdit(false)
         }
-        if (userData._id === '62d40fa93d9cecb2a8bea1f7') {
+        if (userData.role === 'admin') {
             setShowEditAdmin(false)
         }
-    }
-
-    const deleteCar = () => {
-
-    }
-
-    const editCar = () => {
-
     }
 
     return (
@@ -66,36 +59,8 @@ function Car(car) {
                             src={car.imageUrl}
                             className={styles.image}
                             animate={{ opacity: 1 }}></motion.img>
-                        {showEdit &&
-                            <div
-                                className={styles.edit_btns}
-                                onClick={e => e.stopPropagation()}
-                            >
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <FontAwesomeIcon icon={faXmark} className={styles.delete} onClick={deleteCar} />
-                                    <FontAwesomeIcon icon={faPen} className={styles.edit} onClick={editCar} />
-                                </motion.div>
-                            </div>
-                        }
-                        {showEditAdmin &&
-                            <div
-                                className={styles.edit_btns}
-                                onClick={e => e.stopPropagation()}
-                            >
-                                <motion.div
-                                    initial={{ opacity: 0 }}
-                                    animate={{ opacity: 1 }}
-                                    transition={{ duration: 0.2 }}
-                                >
-                                    <FontAwesomeIcon icon={faXmark} className={styles.delete} onClick={deleteCar} />
-                                    <FontAwesomeIcon icon={faPen} className={styles.edit} onClick={editCar} />
-                                </motion.div>
-                            </div>
-                        }
+                        {showEditAdmin && <ShowHelpBtns />}
+                        {showEdit && <ShowHelpBtns />}
                         {showInfo &&
                             <div className={styles.info}>
                                 <motion.div className={styles.info_text}
@@ -111,6 +76,24 @@ function Car(car) {
                     </div>
                     <p>{car.brand} <span className={styles.model}>{car.model}</span></p>
                 </motion.div>
+            </motion.div>
+        </div>
+    )
+}
+
+function ShowHelpBtns() {
+    return (
+        <div
+            className={styles.edit_btns}
+            onClick={e => e.stopPropagation()}
+        >
+            <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.2 }}
+            >
+                <FontAwesomeIcon icon={faXmark} className={styles.delete} />
+                <Link to='/cars/:id'><FontAwesomeIcon icon={faPen} className={styles.edit} /></Link>
             </motion.div>
         </div>
     )
