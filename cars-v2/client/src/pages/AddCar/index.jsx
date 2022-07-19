@@ -39,6 +39,7 @@ function AddCar() {
                     <div>
                         {Object.keys(stateOptions).slice(0, 5).map(key => {
                             return <ShowInputs
+                                key={key}
                                 value={key}
                                 stateOptions={stateOptions}
                                 setStateOptions={setStateOptions} />
@@ -47,6 +48,7 @@ function AddCar() {
                     <div>
                         {Object.keys(stateOptions).slice(5, 9).map(key => {
                             return <ShowInputs
+                                key={key}
                                 value={key}
                                 stateOptions={stateOptions}
                                 setStateOptions={setStateOptions} />

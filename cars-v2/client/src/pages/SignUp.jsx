@@ -18,7 +18,7 @@ function SignUp() {
             email: '',
             password: ''
         },
-        mode: 'onTouched',
+        mode: 'onChange',
     })
 
     const onSubmit = async (values) => {
