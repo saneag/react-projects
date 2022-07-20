@@ -25,7 +25,7 @@ function Car(car) {
         if (userData && userData._id === car.added_by_id) {
             setShowEdit(true)
         }
-        if (userData.role === 'admin') {
+        if (userData && userData.role === 'admin') {
             setShowEditAdmin(true)
         }
     }
@@ -35,7 +35,7 @@ function Car(car) {
         if (userData && userData._id === car.added_by_id) {
             setShowEdit(false)
         }
-        if (userData.role === 'admin') {
+        if (userData && userData.role === 'admin') {
             setShowEditAdmin(false)
         }
     }
