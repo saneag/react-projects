@@ -3,6 +3,8 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialState = {
     sortBy: 'brand',
     sortOrder: 1,
+    page: 1,
+    carsLimit: 12,
 }
 
 const sortSlice = createSlice({
@@ -14,10 +16,22 @@ const sortSlice = createSlice({
         },
         setSortOrder(state, action) {
             state.sortOrder = action.payload
+        },
+        setPage(state, action) {
+            state.page = action.payload
+        },
+        setCarsLimit(state, action) {
+            state.carsLimit = action.payload
+        },
+        setFilter(state, action) {
+            state.page = Number(action.payload.page)
+            state.carsLimit = Number(action.payload.carsLimit)
+            state.sortBy = action.payload.sortBy
+            state.sortOrder = Number(action.payload.sortOrder)
         }
     }
 })
 
-export const { setSortBy, setSortOrder } = sortSlice.actions
+export const { setSortBy, setSortOrder, setPage, setCarsLimit, setFilter } = sortSlice.actions
 
 export default sortSlice.reducer

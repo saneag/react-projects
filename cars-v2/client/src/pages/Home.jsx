@@ -1,23 +1,27 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import qs from 'qs'
 import { useSelector, useDispatch } from 'react-redux'
 import { Cars, Modal, Pagination, Search, Sort, Skeleton } from '../components/index.js'
+import { setCarsLimit, setPage, setFilter, setSortBy, setSortOrder } from '../redux/slices/sortSlice'
 
 import axios from '../utils/axios'
 
 function Home() {
+    const navigate = useNavigate()
     const dispatch = useDispatch()
-    const { sortBy, sortOrder } = useSelector(state => state.sort)
+    const isURLSet = React.useRef(false)
+    const isMounted = React.useRef(false)
+    const { sortBy, sortOrder, page, carsLimit } = useSelector(state => state.sort)
     const search = useSelector(state => state.search.search)
     const selectedCar = useSelector(state => state.showModalCar.selectedCar)
 
     const [cars, setCars] = React.useState([])
     const [loading, setLoading] = React.useState(true)
-    const [carsLimit, setCarsLimit] = React.useState(12)
     const [showReadMore, setShowReadMore] = React.useState(false)
     const [showLess, setShowLess] = React.useState(false)
-    const [page, setPage] = React.useState(1)
 
-    React.useEffect(() => {
+    const getCars = () => {
         setLoading(true)
         axios.get(`/cars?page=${page}&limit=${carsLimit}&sortBy=${sortBy}&sortOrder=${sortOrder}&search=${search}`)
             .then(res => {
@@ -26,21 +30,48 @@ function Home() {
                 setShowReadMore(carsLimit > res.data.length ? false : true)
                 setShowLess(carsLimit > 12 ? true : false)
             })
+    }
+
+    React.useEffect(() => {
+        if (window.location.search) {
+            const params = qs.parse(window.location.search.substring(1))
+            dispatch(setFilter({
+                ...params
+            }))
+            isURLSet.current = true
+        }
+    }, [])
+
+    React.useEffect(() => {
+        if (isMounted.current) {
+            const queryString = qs.stringify({
+                page, carsLimit, sortBy, sortOrder
+            })
+            navigate(`?${queryString}`)
+        }
+        isMounted.current = true
+    }, [page, carsLimit, sortBy, sortOrder])
+
+    React.useEffect(() => {
+        if (!isURLSet.current) {
+            getCars()
+        }
+        isURLSet.current = false
     }, [page, carsLimit, search, sortBy, sortOrder, dispatch])
 
     React.useEffect(() => {
-        setPage(1)
+        dispatch(setPage(1))
     }, [search])
 
     const showMoreCars = () => {
         if (carsLimit <= cars.length) {
-            setCarsLimit(carsLimit + 12)
+            dispatch(setCarsLimit(carsLimit + 12))
         }
     }
 
     const showLessCars = () => {
         if (carsLimit > 12) {
-            setCarsLimit(carsLimit - 12)
+            dispatch(setCarsLimit(carsLimit - 12))
         }
     }
 
@@ -57,7 +88,7 @@ function Home() {
                 }
             </div>
             {selectedCar && <Modal />}
-            <Pagination page={page} setPage={setPage} />
+            <Pagination />
             <div className='show_btns'>
                 <div>
                     {
