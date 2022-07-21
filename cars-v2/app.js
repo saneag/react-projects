@@ -45,7 +45,7 @@ app.post('/upload', checkAuth, upload.single('image'), (req, res) => {
 })
 
 app.get('/cars', CarsController.getAll)
-// app.get('/cars/:id', CarsController.getOne)
+app.get('/cars/:id', CarsController.getOne)
 app.post('/cars', checkAuth, createCarValidation, handleValidationErrors, CarsController.setCar)
 app.delete('/cars/:id', checkAuth, CarsController.deleteCar)
 app.patch('/cars/:id', checkAuth, handleValidationErrors, CarsController.updateCar)

@@ -21,28 +21,28 @@ export const getAll = async (req, res) => {
     }
 }
 
-// export const getOne = async (req, res) => {
-//     try {
-//         const carId = await req.params.id
+export const getOne = async (req, res) => {
+    try {
+        const carId = await req.params.id
 
-//         Cars.findOne({ _id: carId }, (err, res) => {
-//             if (err) {
-//                 console.log('Could not get car')
-//                 return res.status(500).json({ message: err.message })
-//             }
+        Cars.findOne({ _id: carId }, (err, res) => {
+            if (err) {
+                console.log('Could not get car')
+                return res.status(500).json({ message: err.message })
+            }
 
-//             if (!res) {
-//                 return res.status(404).json({ message: 'Car not found' })
-//             }
+            if (!res) {
+                return res.status(404).json({ message: 'Car not found' })
+            }
 
-//             res.json(res)
-//         })
-//     }
-//     catch (err) {
-//         console.log('Could not get cars')
-//         res.status(500).json({ message: err.message })
-//     }
-// }
+            res.json(res)
+        })
+    }
+    catch (err) {
+        console.log('Could not get cars')
+        res.status(500).json({ message: err.message })
+    }
+}
 
 export const setCar = async (req, res) => {
     try {
