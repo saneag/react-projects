@@ -3,9 +3,13 @@
     justify-content: center;
     align-items: center;
 
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
+
     .add_car_form {
         width: 22rem;
-        height: 30rem;
+        padding: 20px 0;
         background-color: #474E5C;
         border-radius: 20px;
         display: flex;
@@ -25,36 +29,14 @@
         }
 
         form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
 
             .input_field {
-                display: flex;
-                flex-direction: column;
-                position: relative;
-
-                input {
-                    border-bottom: 1px solid white;
-                    background-color: transparent;
-                    color: white;
-                    font-size: 1.2rem;
-                    padding: 5px;
-                    width: 200px;
-
-                    &::-webkit-outer-spin-button,
-                    &::-webkit-inner-spin-button {
-                        -webkit-appearance: none;
-                        margin: 0;
-                    }
-
-                    &[type=number] {
-                        -moz-appearance: textfield;
-                    }
-
-                    &[type="file"] {
-                        display: none;
-                    }
+                input[type="file"] {
+                    display: none;
                 }
 
                 label {
@@ -66,14 +48,6 @@
                         text-transform: uppercase;
                     }
                 }
-
-                .delete_icon {
-                    color: white;
-                    position: absolute;
-                    right: 10px;
-                    top: 40px;
-                    cursor: pointer;
-                }
             }
 
             .file_upload {
@@ -84,9 +58,46 @@
                 align-items: center;
                 gap: 10px;
                 width: 200px;
-                height: 100px;
+                height: 120px;
                 border: 2px dotted gray;
             }
+
+            .submit_btn {
+                font-family: 'Open Sans', sans-serif;
+                font-size: 18px;
+                padding: 10px 30px;
+                border-radius: 10px;
+                border: 1px solid transparent;
+                text-align: center;
+                margin: 25px 35px;
+
+                &:hover {
+                    color: #FDA634;
+                    background-color: transparent;
+                    border: 1px solid #FDA634;
+                }
+            }
+        }
+    }
+
+    .uploaded_image {
+        display: flex;
+        justify-content: center;
+        position: relative;
+
+        img {
+            width: 90%;
+            border-radius: 10px;
+        }
+
+        .delete {
+            color: red;
+            font-size: 1.4em;
+            position: absolute;
+            top: 10px;
+            right: 35px;
+            background-color: #000;
+            padding: 5px 10px;
         }
     }
 }
