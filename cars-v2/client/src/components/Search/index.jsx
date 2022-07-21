@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { setSearch } from '../../redux/slices/searchSlice'
+import { setSearch } from '../../redux/slices/sortSlice'
 import debounce from 'lodash/debounce'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -11,7 +11,7 @@ import styles from './styles.module.scss'
 function Search() {
     const dispatch = useDispatch()
     const userData = useSelector(state => state.auth.data)
-    const search = useSelector(state => state.search.search)
+    const search = useSelector(state => state.sort.search)
     const [searchValue, setSearchValue] = React.useState('')
 
     React.useEffect(() => {
