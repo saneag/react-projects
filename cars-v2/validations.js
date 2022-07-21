@@ -22,5 +22,5 @@ export const createCarValidation = [
     body('traction_type', 'Enter a valid traction type').isString().isLength({ min: 3 }),
     body('gearbox_type', 'Enter a valid gearbox type').isString().isLength({ min: 3 }),
     body('price', 'Enter a valid price').isNumeric().isLength({ min: 1 }),
-    body('imageUrl', 'Invalid url for image').isURL(),
+    body('imageUrl', 'Invalid url for image').isString(),
 ]

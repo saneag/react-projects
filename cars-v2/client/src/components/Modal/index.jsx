@@ -47,7 +47,7 @@ function Modal() {
             <motion.div className={styles.modal_content}
                 onClick={closeModal}
             >
-                <motion.img src={selectedCar.imageUrl}
+                <motion.img src={`http://localhost:5000/${selectedCar.imageUrl}`}
                     initial={{ y: '-100vh' }}
                     animate={{ y: '0px' }} />
                 <motion.div className={styles.info}

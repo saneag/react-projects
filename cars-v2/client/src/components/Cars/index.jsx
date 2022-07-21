@@ -1,9 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
 import { setSelectedCar } from '../../redux/slices/showModalCarSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark, faPen } from '@fortawesome/free-solid-svg-icons'
+import { setSearch } from '../../redux/slices/sortSlice'
+
+import axios from '../../utils/axios'
 
 import { motion } from 'framer-motion'
 
@@ -56,11 +59,11 @@ function Car(car) {
                     transition={{ duration: 1 }}>
                     <div>
                         <motion.img
-                            src={car.imageUrl}
+                            src={`http://localhost:5000/${car.imageUrl}`}
                             className={styles.image}
                             animate={{ opacity: 1 }}></motion.img>
-                        {showEditAdmin && <ShowHelpBtns />}
-                        {showEdit && <ShowHelpBtns />}
+                        {showEditAdmin && <ShowHelpBtns carID={car._id} />}
+                        {showEdit && <ShowHelpBtns carID={car._id} />}
                         {showInfo &&
                             <div className={styles.info}>
                                 <motion.div className={styles.info_text}
@@ -81,7 +84,14 @@ function Car(car) {
     )
 }
 
-function ShowHelpBtns() {
+function ShowHelpBtns({ carID }) {
+    //fix car deleting only from server
+    const removeCar = async () => {
+        if (window.confirm('Are you sure you want to delete this car?')) {
+            await axios.delete(`/cars/${carID}`)
+            window.location.reload()
+        }
+    }
     return (
         <div
             className={styles.edit_btns}
@@ -92,8 +102,12 @@ function ShowHelpBtns() {
                 animate={{ opacity: 1 }}
                 transition={{ duration: 0.2 }}
             >
-                <FontAwesomeIcon icon={faXmark} className={styles.delete} />
-                <Link to='/cars/:id'><FontAwesomeIcon icon={faPen} className={styles.edit} /></Link>
+                <FontAwesomeIcon
+                    icon={faXmark}
+                    className={styles.delete}
+                    onClick={removeCar}
+                />
+                <Link to={`/cars/${carID}`}><FontAwesomeIcon icon={faPen} className={styles.edit} /></Link>
             </motion.div>
         </div>
     )
