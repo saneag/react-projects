@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import qs from 'qs'
 import { useSelector, useDispatch } from 'react-redux'
 import { Cars, Modal, Pagination, Search, Sort, Skeleton } from '../components/index.js'
-import { setCarsLimit, setPage, setFilter, setSortBy, setSortOrder } from '../redux/slices/sortSlice'
+import { setCarsLimit, setPage, setFilter } from '../redux/slices/sortSlice'
 
 import axios from '../utils/axios'
 
@@ -12,8 +12,7 @@ function Home() {
     const dispatch = useDispatch()
     const isURLSet = React.useRef(false)
     const isMounted = React.useRef(false)
-    const { sortBy, sortOrder, page, carsLimit } = useSelector(state => state.sort)
-    const search = useSelector(state => state.search.search)
+    const { sortBy, sortOrder, page, carsLimit, search } = useSelector(state => state.sort)
     const selectedCar = useSelector(state => state.showModalCar.selectedCar)
 
     const [cars, setCars] = React.useState([])
@@ -40,6 +39,7 @@ function Home() {
             }))
             isURLSet.current = true
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     React.useEffect(() => {
@@ -50,6 +50,7 @@ function Home() {
             navigate(`?${queryString}`)
         }
         isMounted.current = true
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page, carsLimit, sortBy, sortOrder])
 
     React.useEffect(() => {
@@ -57,10 +58,13 @@ function Home() {
             getCars()
         }
         isURLSet.current = false
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [page, carsLimit, search, sortBy, sortOrder, dispatch])
 
     React.useEffect(() => {
         dispatch(setPage(1))
+        dispatch(setCarsLimit(12))
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [search])
 
     const showMoreCars = () => {
